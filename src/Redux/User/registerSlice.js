@@ -18,6 +18,22 @@ export const register = createAsyncThunk(
         },
       },
     ).then((response) => response.json());
+    return result;
+  },
+);
+
+export const login = createAsyncThunk(
+  'user/login',
+  async (username) => {
+    const result = await fetch(
+      `http://localhost:3000/api/v1/login/${username}`,
+      {
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    ).then((response) => response.json());
     console.log(result);
     return result;
   },
@@ -35,6 +51,16 @@ export const registerSlice = createSlice({
       error: action.payload.error,
     }),
     [register.rejected]: (state, action) => ({
+      ...state,
+      error: action.payload,
+    }),
+    [login.fulfilled]: (state, action) => ({
+      ...state,
+      user: action.payload.user,
+      logged_in: action.payload.logged_in,
+      error: action.payload.error,
+    }),
+    [login.rejected]: (state, action) => ({
       ...state,
       error: action.payload,
     }),
