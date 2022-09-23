@@ -14,7 +14,7 @@ const Sidebar = () => (
               to="/home"
               className="d-flex align-items-center pb-sm-3 mb-3 me-md-auto text-decoration-none"
             >
-              <span className={`${styles.brandName} fs-1 ps-3 ps-xl-2 ps-md-1`}>
+              <span className={`${styles.brandName} fs-1 ps-4`}>
                 Luxy Rides
               </span>
             </NavLink>
