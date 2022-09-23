@@ -1,0 +1,9 @@
+.navbarContainer {
+  background-color: #fefefe;
+  border-right: 1px solid #f0f5f2;
+}
+
+.brandName {
+  font-family: 'Pacifico', cursive;
+  color: #000;
+}
