@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+:root {
+  --gray-text: #212529;
+  --primary-green: #97c010;
+}
+
 body {
   margin: 0;
+}
+
+.mainCnt {
+  margin-left: 260px;
 }
 
 @media (min-width: 576px) {
@@ -10,18 +19,25 @@ body {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .mainCnt {
+    margin-left: 0;
+    margin-top: 60px;
+  }
+}
+
 .nav-link,
 .nav-link:focus,
 .nav-link:visited {
-  color: #212529;
+  color: var(--gray-text);
   background: transparent;
 }
 
 .nav-link:hover {
-  color: #97c010;
+  color: var(--primary-green);
 }
 
 .nav-link.active {
-  color: #fff;
-  background: #97c010 !important;
+  color: #fff !important;
+  background: var(--primary-green) !important;
 }
