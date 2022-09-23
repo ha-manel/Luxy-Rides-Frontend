@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { register } from '../../Redux/User/registerSlice';
 
@@ -63,6 +64,9 @@ const Register = () => {
           Sign Up
         </button>
       </form>
+      <NavLink to="/login">
+        <span>Log in</span>
+      </NavLink>
     </div>
   );
 };

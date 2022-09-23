@@ -1,10 +1,16 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Splash from './Components/SplashScreen/Splash';
+import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
-// import Register from './Components/Register/Register';
 
 function App() {
   return (
-    <Login />
+    <Routes>
+      <Route path="/" element={<Splash />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Register />} />
+    </Routes>
   );
 }
 
