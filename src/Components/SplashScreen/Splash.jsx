@@ -1,12 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from './Splash.module.css';
 
 const Splash = () => (
   <div
-    className="container-fluid d-flex align-items-center justify-content-center vw-100"
-    style={{ marginLeft: '-260px' }}
+    className={`${styles.splashbg} container-fluid d-flex align-items-center justify-content-center vw-100`}
   >
-    <div>
+    <div className={styles.btncontainer}>
       <NavLink to="login">
         <button type="button" className="btn btn-primary mx-3">
           Log in

@@ -1,0 +1,9 @@
+.splashbg {
+  background-image: url(../../assets/images/splash_screen.jpg);
+  min-height: 100vh;
+  margin-left: -260px;
+}
+
+.btncontainer {
+  margin-top: 15rem;
+}
