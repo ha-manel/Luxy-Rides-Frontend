@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from '../../Redux/User/registerSlice';
 
@@ -19,7 +20,6 @@ const Login = () => {
     <div className="container-fluid w-50 mx-auto mt-5">
       <h2 className="h2 mt-5 mb-3 text-center">Log in</h2>
       <form onSubmit={formSubmit}>
-
         <div className="form-floating mb-3">
           <input
             type="text"
@@ -36,6 +36,9 @@ const Login = () => {
           Log in
         </button>
       </form>
+      <NavLink to="/signup">
+        <span>Sign up</span>
+      </NavLink>
     </div>
   );
 };
