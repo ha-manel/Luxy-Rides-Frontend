@@ -6,11 +6,11 @@ import Login from './Components/Login/Login';
 
 function App() {
   return (
-   <Routes>
-     <Route path="/" element={<Splash />} />
-     <Route path="/login" element={<Login />} />
-     <Route path="/signup" element={<Register />} />
-   </Routes> 
+    <Routes>
+      <Route path="/" element={<Splash />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Register />} />
+    </Routes>
   );
 }
 
