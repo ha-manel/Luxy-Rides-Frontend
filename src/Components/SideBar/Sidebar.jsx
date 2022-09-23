@@ -4,17 +4,17 @@ import styles from './Sidebar.module.css';
 
 const Sidebar = () => (
   <>
-    <div className="container-fluid overflow-hidden d-none d-md-block">
-      <div className="row vh-100 overflow-auto">
+    <div className={`${styles.sidebarCnt} container-fluid overflow-hidden d-none d-md-block position-fixed start-0 top-0`}>
+      <div className="vh-100 overflow-auto w-100">
         <div
-          className={`${styles.navbarContainer} col-12 col-sm-3 col-xl-2 d-flex sticky-top pt-5`}
+          className={`${styles.navbarContainer} vh-100 pt-5`}
         >
-          <div className="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start text-white">
+          <div className="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start">
             <NavLink
               to="/home"
               className="d-flex align-items-center pb-sm-3 mb-3 me-md-auto text-decoration-none"
             >
-              <span className={`${styles.brandName} fs-1 ps-3`}>
+              <span className={`${styles.brandName} fs-1 ps-3 ps-xl-2 ps-md-1`}>
                 Luxy Rides
               </span>
             </NavLink>
@@ -59,6 +59,76 @@ const Sidebar = () => (
         </div>
       </div>
     </div>
+
+    <div
+      className={`${styles.mobileMenu} collapse primary-color d-md-none`}
+      id="navbarToggleExternalContent"
+    >
+      <div
+        className="collapse navbar-collapse d-flex flex-column align-items-center"
+        id="navbarTogglerDemo01"
+      >
+        <ul className="navbar-nav d-flex flex-column align-items-center me-auto mt-3 mb-2 mb-lg-0 w-100">
+          <li className="nav-item mb-2">
+            <NavLink to="/home" className={`${styles.mobileNavLink} nav-link`}>
+              Home
+            </NavLink>
+          </li>
+          <li className="nav-item mb-2">
+            <NavLink
+              to="/reserve"
+              className={`${styles.mobileNavLink} nav-link`}
+            >
+              Reserve
+            </NavLink>
+          </li>
+          <li className="nav-item mb-2">
+            <NavLink
+              to="/reservations"
+              className={`${styles.mobileNavLink} nav-link`}
+            >
+              My Reservations
+            </NavLink>
+          </li>
+          <li className="nav-item mb-2">
+            <NavLink
+              to="/add-car"
+              className={`${styles.mobileNavLink} nav-link`}
+            >
+              Add Car
+            </NavLink>
+          </li>
+          <li className="nav-item mb-2">
+            <NavLink
+              to="/delete-car"
+              className={`${styles.mobileNavLink} nav-link`}
+            >
+              Delete Car
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <nav className={`${styles.mobileNav} navbar primary-color mb-4 d-md-none`}>
+      <div className="container-fluid d-flex justify-content-between">
+        <button
+          className={styles.menuBtn}
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent"
+          aria-controls="navbarToggleExternalContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span>
+            <i className="fa-solid fa-bars" />
+          </span>
+        </button>
+        <h1 className={`${styles.brandName} navbar-brand fs-2 fw-semibold`}>
+          Luxy Rides
+        </h1>
+      </div>
+    </nav>
   </>
 );
 
