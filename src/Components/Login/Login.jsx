@@ -13,16 +13,16 @@ const Login = () => {
     e.preventDefault();
     if (username) {
       dispatch(login(username));
-      if (user.logged_in) {
-        return <Navigate replace to="/home" />;
-      }
       setUsername('');
     }
-    return null;
   };
 
+  if (user.logged_in) {
+    return <Navigate replace to="/home" />;
+  }
+
   return (
-    <div className="container-fluid w-50 mx-auto mt-5">
+    <div className="container-fluid w-25 mx-auto">
       <h2 className="h2 mt-5 mb-3 text-center">Log in</h2>
       <form onSubmit={formSubmit}>
         <div className="form-floating mb-3">
@@ -37,7 +37,7 @@ const Login = () => {
           />
           <label htmlFor="floatingUsername">Username</label>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary mb-3">
           Log in
         </button>
       </form>
