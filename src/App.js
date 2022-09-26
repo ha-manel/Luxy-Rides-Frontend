@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Splash from './Components/SplashScreen/Splash';
 import Register from './Components/Register/Register';
@@ -13,7 +13,10 @@ function App() {
       {user.logged_in && <Sidebar />}
       <main className="mainCnt">
         <Routes>
-          {!user.logged_in && <Route path="/" element={<Splash />} />}
+          <Route
+            path="/"
+            element={user.logged_in ? <Navigate to="/home" /> : <Splash />}
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
         </Routes>
