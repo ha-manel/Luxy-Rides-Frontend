@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { Navigate, NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../../Redux/User/registerSlice';
 
 const Register = () => {
@@ -9,6 +9,7 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
+  const user = useSelector((state) => state.user);
 
   const formSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +20,10 @@ const Register = () => {
       setUsername('');
     }
   };
+
+  if (user.logged_in) {
+    return <Navigate replace to="/home" />;
+  }
 
   return (
     <div className="container-fluid w-25 mx-auto mt-5">
