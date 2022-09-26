@@ -8,8 +8,8 @@ const initialState = {
 
 export const register = createAsyncThunk(
   'user/register',
-  async ({ email, name, username }) => {
-    const result = await fetch(
+  ({ email, name, username }) => {
+    const result = fetch(
       `http://localhost:3000/api/v1/register/${username}/${name}/${email}`,
       {
         method: 'post',
@@ -24,8 +24,8 @@ export const register = createAsyncThunk(
 
 export const login = createAsyncThunk(
   'user/login',
-  async (username) => {
-    const result = await fetch(
+  (username) => {
+    const result = fetch(
       `http://localhost:3000/api/v1/login/${username}`,
       {
         method: 'get',

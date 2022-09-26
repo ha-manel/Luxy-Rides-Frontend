@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { NavLink, Navigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../Redux/User/registerSlice';
 
 /* eslint-disable jsx-a11y/label-has-associated-control */
 const Login = () => {
   const [username, setUsername] = useState('');
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
 
   const formSubmit = (e) => {
     e.preventDefault();
@@ -16,8 +17,12 @@ const Login = () => {
     }
   };
 
+  if (user.logged_in) {
+    return <Navigate replace to="/home" />;
+  }
+
   return (
-    <div className="container-fluid w-50 mx-auto mt-5">
+    <div className="container-fluid w-25 mx-auto">
       <h2 className="h2 mt-5 mb-3 text-center">Log in</h2>
       <form onSubmit={formSubmit}>
         <div className="form-floating mb-3">
@@ -32,7 +37,7 @@ const Login = () => {
           />
           <label htmlFor="floatingUsername">Username</label>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary mb-3">
           Log in
         </button>
       </form>
