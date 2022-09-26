@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { NavLink, Navigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../Redux/User/registerSlice';
 
 /* eslint-disable jsx-a11y/label-has-associated-control */
 const Login = () => {
   const [username, setUsername] = useState('');
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
 
   const formSubmit = (e) => {
     e.preventDefault();
     if (username) {
       dispatch(login(username));
+      if (user.logged_in) {
+        return <Navigate replace to="/home" />;
+      }
       setUsername('');
     }
+    return null;
   };
 
   return (

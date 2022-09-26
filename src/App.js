@@ -5,6 +5,7 @@ import Splash from './Components/SplashScreen/Splash';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
 import Sidebar from './Components/SideBar/Sidebar';
+import Home from './Components/Home/Home';
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -17,6 +18,7 @@ function App() {
             path="/"
             element={user.logged_in ? <Navigate to="/home" /> : <Splash />}
           />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
         </Routes>

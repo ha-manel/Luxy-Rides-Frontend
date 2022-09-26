@@ -24,8 +24,8 @@ export const register = createAsyncThunk(
 
 export const login = createAsyncThunk(
   'user/login',
-  async (username) => {
-    const result = await fetch(
+  (username) => {
+    const result = fetch(
       `http://localhost:3000/api/v1/login/${username}`,
       {
         method: 'get',
