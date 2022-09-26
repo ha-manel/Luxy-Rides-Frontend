@@ -21,10 +21,10 @@ const Register = () => {
   };
 
   return (
-    <div className="container-fluid w-50 mx-auto mt-5">
+    <div className="container-fluid w-25 mx-auto mt-5">
       <h2 className="h2 mt-5 mb-3 text-center">Sign Up</h2>
       <form onSubmit={formSubmit}>
-        <div className="form-floating mb-3">
+        <div className="form-floating mb-3 mt-4">
           <input
             type="email"
             className="form-control"
@@ -60,7 +60,7 @@ const Register = () => {
           />
           <label htmlFor="floatingUsername">Username</label>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary mb-3">
           Sign Up
         </button>
       </form>
