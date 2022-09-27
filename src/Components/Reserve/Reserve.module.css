@@ -1,5 +1,6 @@
 .cnt {
   position: relative;
+  padding-top: 50px;
 }
 
 .cnt::before {
@@ -33,17 +34,19 @@
 }
 
 .input {
+  width: 200px;
   border-radius: 25px;
   background-color: #96bf02;
   color: #fff;
   border-color: #fff;
 }
 
-.label {
+.input::placeholder {
   color: #fff;
 }
 
 .btn {
+  height: 42.25px;
   color: #96bf02;
   background-color: #fff;
   border-color: #96bf02;
