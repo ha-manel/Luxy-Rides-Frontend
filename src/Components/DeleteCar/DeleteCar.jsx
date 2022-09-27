@@ -4,6 +4,7 @@ import Carousel from 'nuka-carousel/lib/carousel';
 import { getCars } from '../../Redux/Car/carSlice';
 import classes from './DeleteCar.module.css';
 import DeleteCarUi from './DeleteCarUi';
+import './Carousel.css';
 
 const DeleteCar = () => {
   const dispatch = useDispatch();
