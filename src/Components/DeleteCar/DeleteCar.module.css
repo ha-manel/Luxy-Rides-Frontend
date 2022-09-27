@@ -1,12 +1,6 @@
 .title {
-  justify-content: center;
   margin-left: 260px;
 }
-
-/* .links {
-  text-decoration: none;
-  color: rgb(26, 26, 26);
-} */
 
 .carCnt {
   display: flex;
@@ -14,6 +8,7 @@
   align-items: center;
   flex-direction: column;
   min-height: 400px;
+  margin-left: 260px;
 }
 
 .imgCnt {

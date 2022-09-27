@@ -17,7 +17,7 @@ const DeleteCarUi = ({
         <h5 className="h6 pt-1">{driver_name}</h5>
       </div>
     </div>
-    <button type="submit">Delete</button>
+    <button type="submit" className="btn btn-primary mb-3">Delete</button>
   </section>
 );
 
