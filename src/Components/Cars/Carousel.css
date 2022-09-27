@@ -1,5 +1,4 @@
 .slider-control-centerright button {
-  background-color: none;
   border: none;
   color: white;
   font-size: 2rem;
@@ -8,12 +7,7 @@
   transition: 0.2s;
 }
 
-.slider-control-centerright button:hover {
-  background-color: #97c010;
-}
-
 .slider-control-centerleft button {
-  background-color: none;
   border: none;
   color: white;
   font-size: 2rem;
@@ -21,6 +15,10 @@
   border-radius: 0 25px 25px 0;
   transition: 0.2s;
   margin-left: -12px;
+}
+
+.slider-control-centerright button:hover {
+  background-color: #97c010;
 }
 
 .slider-control-centerleft button:hover {
