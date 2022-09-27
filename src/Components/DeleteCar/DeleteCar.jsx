@@ -1,8 +1,9 @@
 import React from 'react';
+import classes from './DeleteCar.module.css';
 
 const DeleteCar = () => (
   <div>
-    <h1>Welcome to the delete cars Page</h1>
+    <h1 className={classes.title}>Welcome to the delete cars Page</h1>
   </div>
 );
 
