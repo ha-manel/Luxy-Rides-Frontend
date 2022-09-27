@@ -23,7 +23,7 @@ export const getCars = createAsyncThunk(
 export const deleteCar = createAsyncThunk(
   'car/deleteCar',
   () => {
-    const result = fetch(
+    const resultCar = fetch(
       'http://localhost:3000/api/v1/car/:id',
       {
         method: 'delete',
@@ -32,7 +32,7 @@ export const deleteCar = createAsyncThunk(
         },
       },
     ).then((response) => response.json());
-    return result;
+    return resultCar;
   },
 );
 
