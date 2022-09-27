@@ -7,7 +7,7 @@ const DeleteCarUi = ({
   id, image, model, driver_name,
 
 }) => (
-  <div className={classes.carCnt} key={id}>
+  <section className={classes.carCnt} key={id}>
     <div className={classes.imgCnt}>
       <img src={image} alt={model} className={classes.carImg} />
     </div>
@@ -17,7 +17,8 @@ const DeleteCarUi = ({
         <h5 className="h6 pt-1">{driver_name}</h5>
       </div>
     </div>
-  </div>
+    <button type="submit">Delete</button>
+  </section>
 );
 
 DeleteCarUi.propTypes = {
