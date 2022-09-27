@@ -18,7 +18,11 @@
 }
 
 .carImg {
-  width: 60%;
+  min-height: 350px;
+  max-height: 351px;
+  object-fit: cover;
+  min-width: 250px;
+  max-width: 250px;
   border-radius: 20px;
 }
 
