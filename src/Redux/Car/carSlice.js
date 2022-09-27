@@ -20,6 +20,22 @@ export const getCars = createAsyncThunk(
   },
 );
 
+export const deleteCar = createAsyncThunk(
+  'car/deleteCar',
+  () => {
+    const result = fetch(
+      'http://localhost:3000/api/v1/car/:id',
+      {
+        method: 'delete',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    ).then((response) => response.json());
+    return result;
+  },
+);
+
 export const carSlice = createSlice({
   name: 'cars',
   initialState,
@@ -27,6 +43,11 @@ export const carSlice = createSlice({
   extraReducers: {
 
     [getCars.fulfilled]: (state, action) => ({
+      ...state,
+      cars: action.payload.cars,
+    }),
+
+    [deleteCar.fulfilled]: (state, action) => ({
       ...state,
       cars: action.payload.cars,
     }),
