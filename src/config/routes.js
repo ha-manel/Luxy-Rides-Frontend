@@ -3,6 +3,7 @@ import Login from '../Components/Login/Login';
 import PrivateRoutes from '../Components/PrivateRoutes/PrivateRoutes';
 import Register from '../Components/Register/Register';
 import Splash from '../Components/SplashScreen/Splash';
+import DeleteCar from '../Components/DeleteCar/DeleteCar';
 
 const routes = [
   {
@@ -36,10 +37,10 @@ const routes = [
       //   path: '/add-car',
       //   element: <AddCar />,
       // },
-      // {
-      //   path: '/delete-car',
-      //   element: <DeleteCar />,
-      // },
+      {
+        path: '/delete-car',
+        element: <DeleteCar />,
+      },
     ],
   },
 ];
