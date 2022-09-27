@@ -18,16 +18,16 @@ const DeleteCar = () => {
   return (
     <>
       <h1 className={classes.title}>Welcome to the delete Car Page</h1>
-
-      {carInfo.cars.map((car) => (
-        <DeleteCarUi
-          key={car.id}
-          image={car.picture}
-          model={car.model}
-          driver_name={car.driver_name}
-          user_id={car.user_id}
-        />
-      ))}
+      <div className={classes.title}>
+        {carInfo.cars.map((car) => (
+          <DeleteCarUi
+            key={car.id}
+            image={car.picture}
+            model={car.model}
+            driver_name={car.driver_name}
+          />
+        ))}
+      </div>
     </>
   );
 };

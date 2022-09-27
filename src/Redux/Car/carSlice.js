@@ -20,21 +20,21 @@ export const getCars = createAsyncThunk(
   },
 );
 
-export const deleteCar = createAsyncThunk(
-  'car/deleteCar',
-  () => {
-    const resultCar = fetch(
-      'http://localhost:3000/api/v1/car/:id',
-      {
-        method: 'delete',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      },
-    ).then((response) => response.json());
-    return resultCar;
-  },
-);
+// export const deleteCar = createAsyncThunk(
+//   'car/deleteCar',
+//   () => {
+//     const resultCar = fetch(
+//       `http://localhost:3000/api/v1/cars/${id}`,
+//       {
+//         method: 'delete',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//       },
+//     ).then((response) => response.json());
+//     return resultCar;
+//   },
+// );
 
 export const carSlice = createSlice({
   name: 'cars',
@@ -47,10 +47,10 @@ export const carSlice = createSlice({
       cars: action.payload.cars,
     }),
 
-    [deleteCar.fulfilled]: (state, action) => ({
-      ...state,
-      cars: action.payload.cars,
-    }),
+    // [deleteCar.fulfilled]: (state, action) => ({
+    //   ...state,
+    //   cars: action.payload.cars,
+    // }),
   },
 });
 
