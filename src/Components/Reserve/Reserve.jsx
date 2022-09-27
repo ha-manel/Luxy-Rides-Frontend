@@ -5,11 +5,12 @@ import styles from './Reserve.module.css';
 /* eslint-disable jsx-a11y/label-has-associated-control */
 const Reserve = () => {
   const [date, setDate] = useState('');
+  const [city, setCity] = useState('');
   const [cars, setCars] = useState([]);
 
   const findCars = (e) => {
     e.preventDefault();
-    if (date) {
+    if (date && city) {
       fetch(`http://localhost:3000/api/v1/reserve/cars/${date}`, {
         method: 'get',
         headers: {
@@ -17,21 +18,27 @@ const Reserve = () => {
         },
       })
         .then((response) => response.json())
-        .then((cars) => (<ReservationCars cars={cars} date={date} />));
+        .then((result) => setCars(result.cars));
     }
   };
 
+  if (cars.length > 0) {
+    return <ReservationCars date={date} city={city} cars={cars} />;
+  }
   return (
     <div
       className={`${styles.cnt} container-fluid vh-100 d-flex flex-column align-items-center`}
     >
       <h2 className={`${styles.zindex} fs-1 text-white`}>Reserve a car</h2>
-      <hr className={styles.hr} />
-      <p className={`${styles.zindex} mb-5 fs-5 text-white`}>
+      <p className={`${styles.zindex} fs-5 text-white`}>
         Pull up in a fancy car for your next big event!
       </p>
+      <hr className={styles.hr} />
+      <p className={`${styles.zindex} mb-5 fs-5 text-white`}>
+        Choose a city and a reservation date!
+      </p>
       <form
-        className={`${styles.zindex} d-flex justify-content-around mb-5 align-items-end`}
+        className={`${styles.zindex} ${styles.form} d-flex justify-content-around mb-5 align-items-end`}
         onSubmit={findCars}
       >
         <div>
@@ -44,6 +51,8 @@ const Reserve = () => {
             type="text"
             placeholder="City"
             aria-label=".form-control-lg example"
+            required
+            onChange={(e) => setCity(e.target.value)}
           />
         </div>
         <div>
