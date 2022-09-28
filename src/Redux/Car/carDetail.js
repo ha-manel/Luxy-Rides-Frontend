@@ -25,7 +25,7 @@ export const carDetailSlice = createSlice({
 
     [getCarDetail.fulfilled]: (state, action) => ({
       ...state,
-      cars: action.payload.cars,
+      car: action.payload.car,
     }),
   },
 });
