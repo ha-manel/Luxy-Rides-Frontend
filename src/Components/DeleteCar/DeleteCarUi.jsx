@@ -6,20 +6,32 @@ import classes from './DeleteCar.module.css';
 const DeleteCarUi = ({
   id, image, model, driver_name,
 
-}) => (
-  <section className={classes.carCnt} key={id}>
-    <div className={classes.imgCnt}>
-      <img src={image} alt={model} className={classes.carImg} />
-    </div>
-    <div className="model-detail d-flex flex-column justify-content-center align-items-center">
-      <h3 className="h4 mt-3">{model}</h3>
-      <div className="d-flex flex-row justify-content-center align-items-center gap-2 mt-2">
-        <h5 className="h6 pt-1">{driver_name}</h5>
+}) => {
+  const removeCar = (id) => {
+    fetch(`http://localhost:3000/api/v1/car/${id}`, {
+      method: 'DELETE',
+    }).then((result) => {
+      result.json().then((resp) => {
+        console.warn(resp);
+      });
+    });
+  };
+
+  return (
+    <section className={classes.carCnt} key={id}>
+      <div className={classes.imgCnt}>
+        <img src={image} alt={model} className={classes.carImg} />
       </div>
-    </div>
-    <button type="submit" className="btn btn-primary mb-3">Delete</button>
-  </section>
-);
+      <div className="model-detail d-flex flex-column justify-content-center align-items-center">
+        <h3 className="h4 mt-3">{model}</h3>
+        <div className="d-flex flex-row justify-content-center align-items-center gap-2 mt-2">
+          <h5 className="h6 pt-1">{driver_name}</h5>
+        </div>
+      </div>
+      <button type="button" onClick={() => removeCar(id)} className="btn btn-primary mb-3">Delete</button>
+    </section>
+  );
+};
 
 DeleteCarUi.propTypes = {
   image: PropTypes.string.isRequired,
