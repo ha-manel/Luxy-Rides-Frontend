@@ -13,10 +13,6 @@ const DeleteCar = () => {
   }, [dispatch]);
   const carInfo = useSelector((state) => state.cars);
 
-  //   const deleteCarHandler = (id) => {
-  //     dispatch(cancelRocket(id));
-  //   };
-
   return (
     <>
       <h2 className="h2 text-center mt-5 text-uppercase"><strong>WELCOME TO THE DELETE AREA</strong></h2>
@@ -42,6 +38,7 @@ const DeleteCar = () => {
           {carInfo.cars.map((car) => (
             <DeleteCarUi
               key={car.id}
+              id={car.id}
               image={car.picture}
               model={car.model}
               driver_name={car.driver_name}
