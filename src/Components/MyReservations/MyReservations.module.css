@@ -16,3 +16,14 @@
 .car {
   color: var(--primary-green);
 }
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 350px;
+  }
+
+  .img {
+    width: 100px;
+    height: 100px;
+  }
+}

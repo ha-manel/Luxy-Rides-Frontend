@@ -25,7 +25,7 @@ const MyReservations = () => {
   return (
     <div className="container-fluid d-flex flex-column align-items-center">
       <h2 className="my-4">My Reservations</h2>
-      <div className="d-flex flex-wrap">
+      <div className="d-flex flex-wrap align-items-center justify-content-center">
         {reservations.map((res) => (
           <div className={`${styles.card} d-flex m-4`} key={res.reservation.id}>
             <img className={styles.img} src={res.car.picture} alt="car" />
