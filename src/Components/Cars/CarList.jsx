@@ -13,8 +13,12 @@ const CarList = () => {
   const Cars = useSelector((state) => state.cars);
   return (
     <>
-      <h2 className="h2 text-center mt-5 text-uppercase"><strong>Latest Cars</strong></h2>
-      <p className="text-center text-muted mb-5">Please select a car from below to reserve</p>
+      <h2 className="h2 text-center mt-5 text-uppercase">
+        <strong>Our Latest Cars</strong>
+      </h2>
+      <p className="fs-5 text-center text-muted mb-5">
+        Please select a car from below to reserve
+      </p>
       <div>
         <Carousel
           renderCenterLeftControls={({ previousSlide }) => (
@@ -33,7 +37,6 @@ const CarList = () => {
           renderBottomCenterControls={false}
         >
           {Cars.cars.map((car) => (
-
             <Car
               key={car.id}
               id={car.id}
