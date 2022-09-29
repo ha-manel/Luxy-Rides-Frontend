@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import ReservationCars from './ReservationCars';
 import styles from './Reserve.module.css';
 
@@ -11,14 +12,9 @@ const Reserve = () => {
   const findCars = (e) => {
     e.preventDefault();
     if (date && city) {
-      fetch(`http://localhost:3000/api/v1/reserve/cars/${date}`, {
-        method: 'get',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((response) => response.json())
-        .then((result) => setCars(result.cars));
+      axios
+        .get(`http://localhost:3000/api/v1/reserve/cars/${date}`)
+        .then((response) => setCars(response.data.cars));
     }
   };
 
