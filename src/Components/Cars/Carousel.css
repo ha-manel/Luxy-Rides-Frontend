@@ -1,0 +1,30 @@
+.slider-control-centerright button {
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0 2rem;
+  border-radius: 25px 0 0 25px;
+  transition: 0.2s;
+}
+
+.slider-control-centerleft button {
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0 2rem;
+  border-radius: 0 25px 25px 0;
+  transition: 0.2s;
+  margin-left: -12px;
+}
+
+.slider-control-centerright button:hover {
+  background-color: #97c010;
+}
+
+.slider-control-centerleft button:hover {
+  background-color: #97c010;
+}
+
+.slide {
+  width: fit-content;
+}
