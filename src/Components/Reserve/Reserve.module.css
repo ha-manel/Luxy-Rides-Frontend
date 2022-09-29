@@ -93,8 +93,7 @@
   margin-left: 20px;
 }
 
-
-@media screen and (max-width: 890px){
+@media screen and (max-width: 890px) {
   .carCard {
     width: 500px;
   }
