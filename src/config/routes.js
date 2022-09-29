@@ -2,6 +2,7 @@ import Home from '../Components/Home/Home';
 import Login from '../Components/Login/Login';
 import PrivateRoutes from '../Components/PrivateRoutes/PrivateRoutes';
 import Register from '../Components/Register/Register';
+import AddCar from '../Components/Cars/AddCar';
 import Splash from '../Components/SplashScreen/Splash';
 
 const routes = [
@@ -32,10 +33,10 @@ const routes = [
       //   path: '/reservations',
       //   element: <Reservations />,
       // },
-      // {
-      //   path: '/add-car',
-      //   element: <AddCar />,
-      // },
+      {
+        path: '/add-car',
+        element: <AddCar />,
+      },
       // {
       //   path: '/delete-car',
       //   element: <DeleteCar />,
