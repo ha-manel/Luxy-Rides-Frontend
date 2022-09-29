@@ -10,15 +10,14 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
+  const [loading, setLoading] = useState(false);
   const user = useSelector((state) => state.user);
 
   const formSubmit = (e) => {
     e.preventDefault();
     if (email && name && username) {
       dispatch(register({ email, name, username }));
-      setEmail('');
-      setName('');
-      setUsername('');
+      setLoading(true);
     }
   };
 
@@ -68,9 +67,15 @@ const Register = () => {
           />
           <label htmlFor="floatingUsername">Username</label>
         </div>
-        <button type="submit" className="btn btn-primary mb-3">
-          Sign Up
-        </button>
+        {loading ? (
+          <button type="button" className="btn btn-primary disabled mb-3">
+            <i className="fa-solid fa-spinner fa-spin" />
+          </button>
+        ) : (
+          <button type="submit" className="btn btn-primary mb-3">
+            Sign up
+          </button>
+        )}
       </form>
       <NavLink to="/login">
         <span>Log in</span>

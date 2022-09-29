@@ -7,6 +7,7 @@ import styles from './Login.module.css';
 /* eslint-disable jsx-a11y/label-has-associated-control */
 const Login = () => {
   const [username, setUsername] = useState('');
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
 
@@ -14,7 +15,7 @@ const Login = () => {
     e.preventDefault();
     if (username) {
       dispatch(login(username));
-      setUsername('');
+      setLoading(true);
     }
   };
 
@@ -40,9 +41,15 @@ const Login = () => {
           />
           <label htmlFor="floatingUsername">Username</label>
         </div>
-        <button type="submit" className="btn btn-primary mb-3">
-          Log in
-        </button>
+        {loading ? (
+          <button type="button" className="btn btn-primary disabled mb-3">
+            <i className="fa-solid fa-spinner fa-spin" />
+          </button>
+        ) : (
+          <button type="submit" className="btn btn-primary mb-3">
+            Log in
+          </button>
+        )}
       </form>
       <NavLink to="/signup">
         <span>Sign up</span>

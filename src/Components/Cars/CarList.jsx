@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Carousel from 'nuka-carousel/lib/carousel';
 import { getCars } from '../../Redux/Car/carSlice';
@@ -6,11 +6,22 @@ import Car from './Car';
 import './Carousel.css';
 
 const CarList = () => {
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
+    setLoading(true);
     dispatch(getCars());
+    setLoading(false);
   }, [dispatch]);
   const Cars = useSelector((state) => state.cars);
+
+  if (loading) {
+    return (
+      <div className="container-fluid vh-100 v-100 d-flex justify-content-center align-items-center">
+        <i className="fa-solid fa-spinner fa-spin fs-1" />
+      </div>
+    );
+  }
   return (
     <>
       <h2 className="h2 text-center mt-5 text-uppercase">
