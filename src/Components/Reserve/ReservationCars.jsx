@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 import styles from './Reserve.module.css';
 
 const ReservationCars = ({
@@ -10,20 +12,18 @@ const ReservationCars = ({
   setCars,
 }) => {
   const [car, setCar] = useState(cars[0]);
+  const [reserved, setReserved] = useState(false);
   const user = useSelector((state) => state.user);
 
   const reserveCar = (e) => {
     e.preventDefault();
-    fetch(
-      `http://localhost:3000/api/v1/reservation/${user.user.id}/${car.id}/${city}/${date}`,
-      {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      },
-    );
+    axios.post(`http://localhost:3000/api/v1/reservation/${user.user.id}/${car.id}/${city}/${date}`)
+      .then(() => setReserved(true));
   };
+
+  if (reserved) {
+    return <Navigate replace to="/reservations" />;
+  }
 
   return (
     <div
