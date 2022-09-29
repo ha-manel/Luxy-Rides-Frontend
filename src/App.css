@@ -3,6 +3,7 @@
 :root {
   --gray-text: #212529;
   --primary-green: #97c010;
+  --pacifico: 'Pacifico', cursive;
 }
 
 body {
