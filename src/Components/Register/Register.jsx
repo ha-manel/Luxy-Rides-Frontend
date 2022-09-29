@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Navigate, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../../Redux/User/registerSlice';
+import styles from './Register.module.css';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -26,10 +27,12 @@ const Register = () => {
   }
 
   return (
-    <div className="container-fluid w-25 mx-auto mt-5">
-      <h2 className="h2 mt-5 mb-3 text-center">Sign Up</h2>
-      <form onSubmit={formSubmit}>
-        <div className="form-floating mb-3 mt-4">
+    <div
+      className={`${styles.container} container-fluid vw-100 d-flex flex-column align-items-center justify-content-center`}
+    >
+      <h2 className={`${styles.header} fs-2 mb-5`}>Sign Up</h2>
+      <form onSubmit={formSubmit} className={styles.form}>
+        <div className="form-floating mb-3">
           <input
             type="email"
             className="form-control"

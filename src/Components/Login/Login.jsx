@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../Redux/User/registerSlice';
+import styles from './Login.module.css';
 
 /* eslint-disable jsx-a11y/label-has-associated-control */
 const Login = () => {
@@ -22,9 +23,11 @@ const Login = () => {
   }
 
   return (
-    <div className="container-fluid w-25 mx-auto">
-      <h2 className="h2 mt-5 mb-3 text-center">Log in</h2>
-      <form onSubmit={formSubmit}>
+    <div
+      className={`${styles.container} container-fluid vw-100 d-flex flex-column align-items-center justify-content-center`}
+    >
+      <h2 className={`${styles.header} fs-2 mb-5`}>Log in</h2>
+      <form onSubmit={formSubmit} className={styles.form}>
         <div className="form-floating mb-3">
           <input
             type="text"
