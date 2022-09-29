@@ -23,11 +23,13 @@ const Reserve = () => {
   };
 
   if (cars.length > 0) {
-    return <ReservationCars date={date} city={city} cars={cars} />;
+    return (
+      <ReservationCars date={date} city={city} cars={cars} setCars={setCars} />
+    );
   }
   return (
     <div
-      className={`${styles.cnt} container-fluid vh-100 d-flex flex-column align-items-center`}
+      className={`${styles.cnt} container-fluid vh-100 d-flex flex-column align-items-center pt-5`}
     >
       <h2 className={`${styles.zindex} fs-1 text-white`}>Reserve a car</h2>
       <p className={`${styles.zindex} fs-5 text-white`}>

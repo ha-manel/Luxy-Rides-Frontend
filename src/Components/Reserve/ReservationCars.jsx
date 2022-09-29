@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import styles from './Reserve.module.css';
 
-const ReservationCars = ({ date, cars, city }) => {
+const ReservationCars = ({
+  date,
+  cars,
+  city,
+  setCars,
+}) => {
   const [car, setCar] = useState(cars[0]);
   const user = useSelector((state) => state.user);
 
@@ -24,6 +29,13 @@ const ReservationCars = ({ date, cars, city }) => {
     <div
       className={`${styles.cnt} container-fluid vh-100 d-flex flex-column align-items-center`}
     >
+      <button
+        type="button"
+        className={`${styles.zindex} ${styles.backBtn} btn text-white fs-1 align-self-start ms-3`}
+        onClick={() => setCars([])}
+      >
+        <i className="fa-regular fa-circle-left" />
+      </button>
       <h2 className={`${styles.zindex} fs-1 text-white`}>Reserve a car</h2>
       <p className={`${styles.zindex} fs-5 text-white`}>
         Pull up in a fancy car for your next big event!
@@ -70,6 +82,7 @@ const ReservationCars = ({ date, cars, city }) => {
 
 ReservationCars.propTypes = {
   cars: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])).isRequired,
+  setCars: PropTypes.func.isRequired,
   date: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
 };
