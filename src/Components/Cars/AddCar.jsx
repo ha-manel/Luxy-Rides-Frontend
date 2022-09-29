@@ -17,7 +17,7 @@ const AddCar = () => {
       user_id: user.user.id, model, driver_name, picture,
     };
 
-    const res = axios.post('http://localhost:3000/api/v1/car', car);
+    axios.post('http://localhost:3000/api/v1/car', car);
 
     setModel('');
     setDriverName('');
