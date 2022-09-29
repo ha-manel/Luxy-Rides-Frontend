@@ -4,16 +4,17 @@ import styles from './Splash.module.css';
 
 const Splash = () => (
   <div
-    className={`${styles.splashbg} container-fluid d-flex align-items-center justify-content-center vw-100`}
+    className={`${styles.splashbg} container-fluid d-flex flex-column align-items-center vw-100`}
   >
+    <h1 className={`${styles.header} text-white`}>Luxy Rides</h1>
     <div className={styles.btncontainer}>
       <NavLink to="login">
-        <button type="button" className="btn btn-primary mx-3">
+        <button type="button" className="btn btn-primary me-4 fs-4">
           Log in
         </button>
       </NavLink>
       <NavLink to="signup">
-        <button type="button" className="btn btn-success mx-3">
+        <button type="button" className="btn btn-success ms-4 fs-4">
           Sign up
         </button>
       </NavLink>
