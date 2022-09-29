@@ -33,7 +33,6 @@ const CarList = () => {
           renderBottomCenterControls={false}
         >
           {Cars.cars.map((car) => (
-
             <Car
               key={car.id}
               id={car.id}
