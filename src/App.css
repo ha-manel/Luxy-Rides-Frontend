@@ -1,12 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 :root {
   --gray-text: #212529;
   --primary-green: #97c010;
+  --pacifico: 'Pacifico', cursive;
 }
 
 body {
   margin: 0;
+}
+
+.mainCnt {
+  margin-left: 260px;
 }
 
 @media (min-width: 576px) {
@@ -18,7 +23,6 @@ body {
 @media screen and (max-width: 768px) {
   .mainCnt {
     margin-left: 0;
-    margin-top: 60px;
   }
 }
 
