@@ -14,7 +14,7 @@
   height: 100%;
   background-image: url("https://images.unsplash.com/photo-1535448580089-c7f9490c78b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1321&q=80");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 50%;
 }
 
@@ -105,7 +105,7 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 1020px) {
   .form {
     flex-direction: column;
   }
@@ -113,7 +113,9 @@
   .input {
     margin: 10px 0;
   }
+}
 
+@media screen and (max-width: 550px) {
   .carCard {
     width: 90%;
     min-width: 350px;

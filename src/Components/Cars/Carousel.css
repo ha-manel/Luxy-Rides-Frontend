@@ -33,3 +33,13 @@
 .slider-container {
   padding: 0 30px;
 }
+
+@media screen and (max-width: 550px) {
+  .slider-control-centerright button {
+    padding: 0 1.25rem;
+  }
+
+  .slider-control-centerleft button {
+    padding: 0 1.25rem;
+  }
+}
