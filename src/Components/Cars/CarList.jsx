@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Carousel from 'nuka-carousel/lib/carousel';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { getCars } from '../../Redux/Car/carSlice';
 import Car from './Car';
 import './Carousel.css';
@@ -14,6 +16,17 @@ const CarList = () => {
     setLoading(false);
   }, [dispatch]);
   const Cars = useSelector((state) => state.cars);
+  const theme = useTheme();
+  const mdUp = useMediaQuery(theme.breakpoints.up('md'));
+  const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
+
+  let SlideToShowNumber = 1;
+  if (mdUp) {
+    SlideToShowNumber = 2;
+  }
+  if (lgUp) {
+    SlideToShowNumber = 3;
+  }
 
   if (loading) {
     return (
@@ -44,7 +57,7 @@ const CarList = () => {
           )}
           className="car-carousel"
           wrapAround
-          slidesToShow={3}
+          slidesToShow={SlideToShowNumber}
           renderBottomCenterControls={false}
         >
           {Cars.cars.map((car) => (
