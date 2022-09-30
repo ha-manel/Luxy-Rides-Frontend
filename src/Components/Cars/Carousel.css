@@ -2,6 +2,7 @@
   border: none;
   color: white;
   font-size: 2rem;
+  background-color: #adb5bd;
   padding: 0 2rem;
   border-radius: 25px 0 0 25px;
   transition: 0.2s;
@@ -11,6 +12,7 @@
   border: none;
   color: white;
   font-size: 2rem;
+  background-color: #adb5bd;
   padding: 0 2rem;
   border-radius: 0 25px 25px 0;
   transition: 0.2s;
@@ -26,4 +28,8 @@
 
 .slide {
   width: fit-content;
+}
+
+.slider-container {
+  padding: 0 30px;
 }

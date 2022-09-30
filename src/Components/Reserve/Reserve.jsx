@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import ReservationCars from './ReservationCars';
 import styles from './Reserve.module.css';
 
@@ -7,18 +8,15 @@ const Reserve = () => {
   const [date, setDate] = useState('');
   const [city, setCity] = useState('');
   const [cars, setCars] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const findCars = (e) => {
     e.preventDefault();
     if (date && city) {
-      fetch(`http://localhost:3000/api/v1/reserve/cars/${date}`, {
-        method: 'get',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((response) => response.json())
-        .then((result) => setCars(result.cars));
+      axios
+        .get(`http://localhost:3000/api/v1/reserve/cars/${date}`)
+        .then((response) => setCars(response.data.cars));
+      setLoading(true);
     }
   };
 
@@ -72,9 +70,15 @@ const Reserve = () => {
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
-        <button type="submit" className={`${styles.btn} btn px-4 ms-4`}>
-          Next
-        </button>
+        {loading ? (
+          <button type="submit" className={`${styles.btn} btn disabled px-4 ms-4`}>
+            <i className="fa-solid fa-spinner fa-spin" />
+          </button>
+        ) : (
+          <button type="submit" className={`${styles.btn} btn px-4 ms-4`}>
+            Next
+          </button>
+        )}
       </form>
     </div>
   );

@@ -9,7 +9,7 @@
 }
 
 .brandName {
-  font-family: 'Pacifico', cursive;
+  font-family: var(--pacifico);
   color: #000;
 }
 

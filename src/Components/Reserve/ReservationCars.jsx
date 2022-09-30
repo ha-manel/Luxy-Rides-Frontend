@@ -6,19 +6,21 @@ import axios from 'axios';
 import styles from './Reserve.module.css';
 
 const ReservationCars = ({
-  date,
-  cars,
-  city,
-  setCars,
+  date, cars, city, setCars,
 }) => {
   const [car, setCar] = useState(cars[0]);
   const [reserved, setReserved] = useState(false);
+  const [loading, setLoading] = useState(false);
   const user = useSelector((state) => state.user);
 
   const reserveCar = (e) => {
     e.preventDefault();
-    axios.post(`http://localhost:3000/api/v1/reservation/${user.user.id}/${car.id}/${city}/${date}`)
+    axios
+      .post(
+        `http://localhost:3000/api/v1/reservation/${user.user.id}/${car.id}/${city}/${date}`,
+      )
       .then(() => setReserved(true));
+    setLoading(true);
   };
 
   if (reserved) {
@@ -58,9 +60,18 @@ const ReservationCars = ({
             </option>
           ))}
         </select>
-        <button type="submit" className={`${styles.btn} btn px-4 ms-4`}>
-          Reserve
-        </button>
+        {loading ? (
+          <button
+            type="submit"
+            className={`${styles.btn} disabled btn px-4 ms-4`}
+          >
+            <i className="fa-solid fa-spinner fa-spin" />
+          </button>
+        ) : (
+          <button type="submit" className={`${styles.btn} btn px-4 ms-4`}>
+            Reserve
+          </button>
+        )}
       </form>
 
       <div className={`${styles.zindex} ${styles.carCard} d-flex`}>
