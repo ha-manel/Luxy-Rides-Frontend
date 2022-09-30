@@ -45,7 +45,7 @@ const routes = [
       //   element: <DeleteCar />,
       // },
       {
-        path: '/car/:carId"',
+        path: '/car/:id',
         element: <CarDetails />,
       },
     ],
