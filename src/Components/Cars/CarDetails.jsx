@@ -1,22 +1,26 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getCarDetail } from '../../Redux/Car/carSlice';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const CarDetails = () => {
-  const dispatch = useDispatch();
-  useEffect((id) => {
-    dispatch(getCarDetail(id));
-  }, [dispatch]);
-  const Car = useSelector((state) => state.car);
+  const { id } = useParams();
+  const [car, setCar] = useState({});
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/api/v1/car/${id}`)
+      .then((response) => setCar(response.data.car));
+  }, []);
 
   return (
     <>
-      <h1>CarDetails</h1>
+      <h1>Car Details</h1>
       <div>
-        {Car}
+        <img src={car.picture} alt="car" />
+        <p>{car.model}</p>
+        <p>{car.driver_name}</p>
       </div>
     </>
   );
 };
-
 export default CarDetails;
