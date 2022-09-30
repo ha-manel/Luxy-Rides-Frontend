@@ -29,7 +29,7 @@ const AddCar = () => {
       className={`${styles.cnt} container-fluid vh-100 d-flex flex-column align-items-center`}
     >
       <h2 className={`${styles.zindex} fs-1 text-white`}>Add Car</h2>
-      <p className={`${styles.zindex} fs-5 text-white`}>
+      <p className={`${styles.zindex} fs-5 text-white text-center`}>
         You got a fancy car from which you wanna make some extra bucks $? Add it on our website!
       </p>
       <hr className={styles.hr} />
