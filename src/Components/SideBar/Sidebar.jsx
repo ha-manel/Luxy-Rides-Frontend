@@ -109,7 +109,7 @@ const Sidebar = () => (
         </ul>
       </div>
     </div>
-    <nav className={`${styles.mobileNav} navbar primary-color mb-4 d-md-none`}>
+    <nav className={`${styles.mobileNav} navbar primary-color d-md-none`}>
       <div className="container-fluid d-flex justify-content-between">
         <button
           className={styles.menuBtn}
