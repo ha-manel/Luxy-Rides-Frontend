@@ -1,6 +1,11 @@
 .links {
   text-decoration: none;
   color: rgb(26, 26, 26);
+  transition: 0.1s;
+}
+
+.links:hover {
+  color: var(--primary-green);
 }
 
 .carCnt {
