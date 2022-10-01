@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import axios from 'axios';
 import styles from './carDetails.module.css';
 
@@ -25,9 +25,9 @@ const CarDetails = () => {
             <p>Driver Name:</p>
             <p>{car.driver_name}</p>
           </div>
-          <div className={styles.btncontainer}>
+          <NavLink to="/reserve" className={styles.btncontainer}>
             <button type="button" className={styles.reservebtn}>Reserve</button>
-          </div>
+          </NavLink>
         </div>
       </div>
     </>
