@@ -15,6 +15,7 @@ const CarDetails = () => {
 
   return (
     <>
+      <h2 className={styles.title}>CAR DETAILS</h2>
       <div className={styles.detailContainer}>
         <div className={styles.car}>
           <img src={car.picture} alt={car.model} />
