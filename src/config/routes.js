@@ -1,3 +1,4 @@
+import CarDetails from '../Components/Cars/CarDetails';
 import Home from '../Components/Home/Home';
 import Login from '../Components/Login/Login';
 import PrivateRoutes from '../Components/PrivateRoutes/PrivateRoutes';
@@ -43,6 +44,10 @@ const routes = [
       //   path: '/delete-car',
       //   element: <DeleteCar />,
       // },
+      {
+        path: '/car/:id',
+        element: <CarDetails />,
+      },
     ],
   },
 ];

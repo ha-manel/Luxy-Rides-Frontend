@@ -8,7 +8,7 @@ import driver from '../../assets/images/driver.png';
 const Car = ({
   id, model, picture, driver_name,
 }) => (
-  <NavLink className={styles.links} to={`/car/${id}`}>
+  <NavLink className={styles.links} key={id} to={`/car/${id}`}>
     <div className={styles.carCnt} key={id}>
       <div className={styles.imgCnt}>
         <img src={picture} alt={model} className={styles.carImg} />

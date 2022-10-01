@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+.detailContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 50px;
+}
+
+.title {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.carDriver {
+  display: flex;
+  gap: 0 20px;
+  background-color: #ecf0f1;
+  padding: 10px 20px 0 20px;
+}
+
+.car {
+  margin-left: 60px;
+  margin-top: 80px;
+}
+
+img {
+  transition: transform 2s ease-in-out;
+}
+
+img:hover {
+  transform: rotate(360deg);
+}
+
+.car img {
+  min-height: 450px;
+  max-height: 451px;
+  object-fit: cover;
+  min-width: 450px;
+  max-width: 450px;
+  border-radius: 20px;
+}
+
+.detail h2 {
+  margin-left: 75px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.detail p {
+  font-weight: bold;
+}
+
+.reservebtn {
+  justify-items: end;
+}
+
+.detail {
+  position: relative;
+  padding: 10px;
+}
+
+.btncontainer {
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  padding: 10px;
+}
+
+.btncontainer button {
+  width: 10rem;
+  border-radius: 20px;
+  padding: 0.5rem;
+  background-color: #97c010;
+  color: #fff;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+}
+
+.btncontainer button:hover {
+  color: black;
+  background-color: #caf149;
+}
+
+@media screen and (max-width: 768px) {
+  .detailContainer {
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .car {
+    margin: auto;
+    align-items: center;
+  }
+
+  .car img {
+    margin-top: 50px;
+    justify-content: center;
+    min-height: 450px;
+    max-height: 451px;
+    object-fit: cover;
+    min-width: 350px;
+    max-width: 350px;
+    border-radius: 10px;
+  }
+
+  .detail {
+    position: relative;
+    padding: 10px;
+  }
+
+  .btncontainer {
+    position: relative;
+    bottom: 0;
+    right: 10px;
+    padding: 10px;
+  }
+
+  .carDriver {
+    display: flex;
+    gap: 0 10px;
+    background-color: #ecf0f1;
+  }
+
+  .btncontainer button {
+    margin: 30px 0;
+  }
+
+  .detail h2 {
+    margin: auto;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .detailContainer {
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+  }
+
+  .title {
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .detail {
+    position: relative;
+    padding: 10px;
+  }
+
+  .btncontainer {
+    position: relative;
+    bottom: 0;
+    right: 10px;
+    padding: 10px;
+  }
+
+  .carDriver {
+    display: flex;
+    gap: 0 10px;
+    background-color: #ecf0f1;
+  }
+
+  .btncontainer button {
+    margin: 30px 0;
+  }
+
+  .detail h2 {
+    margin: auto;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+}
