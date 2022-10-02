@@ -34,3 +34,12 @@
 .driverImg {
   width: 10%;
 }
+
+.price {
+  background-color: var(--primary-green);
+  border-radius: 20px;
+  padding: 0.4rem 0.75rem;
+  margin-top: 1rem;
+  color: white;
+  font-weight: 500;
+}
