@@ -67,6 +67,7 @@ const CarList = () => {
               model={car.model}
               picture={car.picture}
               driver_name={car.driver_name}
+              price={car.price}
             />
           ))}
         </Carousel>
