@@ -48,6 +48,13 @@ const MyReservations = () => {
                 <span>Driver&apos;s name: </span>
                 <span className="fw-bold">{res.car.driver_name}</span>
               </p>
+              <p>
+                <span>Price Per Day: </span>
+                <span className="fw-bold">
+                  $
+                  {res.car.price}
+                </span>
+              </p>
             </div>
           </div>
         ))}

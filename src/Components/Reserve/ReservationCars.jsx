@@ -85,6 +85,11 @@ const ReservationCars = ({
             <span>Driver&apos;s name: </span>
             {car.driver_name}
           </h4>
+          <h5 className="fs-5">
+            $
+            {' '}
+            {car.price}
+          </h5>
         </div>
       </div>
     </div>
