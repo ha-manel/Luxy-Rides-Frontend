@@ -29,7 +29,7 @@ const routes = [
         element: <Home />,
       },
       {
-        path: '/reserve',
+        path: '/reserve/:id',
         element: <Reserve />,
       },
       {

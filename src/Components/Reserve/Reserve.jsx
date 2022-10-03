@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
+import { useParams, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 import ReservationCars from './ReservationCars';
 import styles from './Reserve.module.css';
 
 /* eslint-disable jsx-a11y/label-has-associated-control */
 const Reserve = () => {
+  const { id } = useParams();
   const [date, setDate] = useState('');
   const [city, setCity] = useState('');
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [reserved, setReserved] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const user = useSelector((state) => state.user);
 
   const findCars = (e) => {
     e.preventDefault();
@@ -20,11 +26,42 @@ const Reserve = () => {
     }
   };
 
+  const reserveCar = (e) => {
+    e.preventDefault();
+    if (date && city) {
+      setLoading(true);
+      axios
+        .post(
+          `http://localhost:3000/api/v1/reservation/${user.user.id}/${Number(
+            id,
+          )}/${city}/${date}`,
+        )
+        .then(() => {
+          setReserved(true);
+        })
+        .catch((error) => {
+          setLoading(false);
+          setErrorMessage(error.response.data.error);
+        });
+    }
+  };
+
   if (cars.length > 0) {
     return (
-      <ReservationCars date={date} city={city} cars={cars} setCars={setCars} />
+      <ReservationCars
+        date={date}
+        city={city}
+        cars={cars}
+        setCars={setCars}
+        setLoadingFirst={setLoading}
+      />
     );
   }
+
+  if (reserved) {
+    return <Navigate replace to="/reservations" />;
+  }
+
   return (
     <div
       className={`${styles.cnt} container-fluid vh-100 d-flex flex-column align-items-center pt-5`}
@@ -39,7 +76,7 @@ const Reserve = () => {
       </p>
       <form
         className={`${styles.zindex} ${styles.form} d-flex justify-content-around mb-5 align-items-end`}
-        onSubmit={findCars}
+        onSubmit={Number(id) ? reserveCar : findCars}
       >
         <div>
           <label htmlFor="city" className="form-label text-white ms-3">
@@ -71,15 +108,19 @@ const Reserve = () => {
           />
         </div>
         {loading ? (
-          <button type="submit" className={`${styles.btn} btn disabled px-4 ms-4`}>
+          <button
+            type="submit"
+            className={`${styles.btn} btn disabled px-4 ms-4`}
+          >
             <i className="fa-solid fa-spinner fa-spin" />
           </button>
         ) : (
           <button type="submit" className={`${styles.btn} btn px-4 ms-4`}>
-            Next
+            {Number(id) ? 'Reserve' : 'Next'}
           </button>
         )}
       </form>
+      <p className={styles.zindex}>{errorMessage}</p>
     </div>
   );
 };
