@@ -28,3 +28,7 @@
 .slide {
   width: fit-content;
 }
+
+.title {
+  margin: auto;
+}
