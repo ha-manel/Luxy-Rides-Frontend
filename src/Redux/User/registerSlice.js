@@ -22,14 +22,29 @@ export const register = createAsyncThunk(
 export const login = createAsyncThunk('user/login', (username) => {
   const result = axios
     .get(`http://localhost:3000/api/v1/login/${username}`)
-    .then((response) => response.data);
+    .then((response) => {
+      localStorage.setItem('user', JSON.stringify(response.data));
+      window.location.reload();
+    });
   return result;
 });
 
 export const registerSlice = createSlice({
   name: 'register',
   initialState,
-  reducers: {},
+  reducers: {
+    checkUser: () => {
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user) {
+        return user;
+      }
+      return {
+        user,
+        logged_in: false,
+        error: null,
+      };
+    },
+  },
   extraReducers: {
     [register.fulfilled]: (state, action) => ({
       ...state,
@@ -55,3 +70,4 @@ export const registerSlice = createSlice({
 });
 
 export default registerSlice.reducer;
+export const { checkUser } = registerSlice.actions;

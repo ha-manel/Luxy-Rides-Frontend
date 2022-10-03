@@ -130,3 +130,8 @@
     margin-left: 10px;
   }
 }
+
+.errorMsg {
+  color: red;
+  font-weight: 500;
+}

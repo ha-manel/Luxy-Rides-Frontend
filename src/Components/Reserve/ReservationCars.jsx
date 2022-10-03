@@ -6,7 +6,7 @@ import axios from 'axios';
 import styles from './Reserve.module.css';
 
 const ReservationCars = ({
-  date, cars, city, setCars,
+  date, cars, city, setCars, setLoadingFirst,
 }) => {
   const [car, setCar] = useState(cars[0]);
   const [reserved, setReserved] = useState(false);
@@ -23,6 +23,11 @@ const ReservationCars = ({
     setLoading(true);
   };
 
+  const backToFirstPage = () => {
+    setLoadingFirst(false);
+    setCars([]);
+  };
+
   if (reserved) {
     return <Navigate replace to="/reservations" />;
   }
@@ -34,7 +39,7 @@ const ReservationCars = ({
       <button
         type="button"
         className={`${styles.zindex} ${styles.backBtn} btn text-white fs-1 align-self-start ms-3`}
-        onClick={() => setCars([])}
+        onClick={() => backToFirstPage()}
       >
         <i className="fa-regular fa-circle-left" />
       </button>
@@ -99,6 +104,7 @@ const ReservationCars = ({
 ReservationCars.propTypes = {
   cars: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])).isRequired,
   setCars: PropTypes.func.isRequired,
+  setLoadingFirst: PropTypes.func.isRequired,
   date: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
 };
