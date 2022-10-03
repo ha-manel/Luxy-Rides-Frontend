@@ -33,7 +33,7 @@ const CarDetails = () => {
               {car.price}
             </p>
           </div>
-          <NavLink to="/reserve" className={styles.btncontainer}>
+          <NavLink to={`/reserve/${id}`} className={styles.btncontainer}>
             <button type="button" className={styles.reservebtn}>
               <i className="fa-solid fa-car-side me-3" />
               Reserve
