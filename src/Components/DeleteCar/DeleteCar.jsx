@@ -1,18 +1,21 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useSelector } from 'react-redux';
 import Carousel from 'nuka-carousel/lib/carousel';
-import { getCars } from '../../Redux/Car/carSlice';
 import classes from './DeleteCar.module.css';
 import DeleteCarUi from './DeleteCarUi';
 import './Carousel.css';
 
 const DeleteCar = () => {
-  const dispatch = useDispatch();
+  const [cars, setCars] = useState([]);
+  const user = useSelector((state) => state.user);
   useEffect(() => {
-    dispatch(getCars());
-  }, [dispatch]);
-  const carInfo = useSelector((state) => state.cars);
-
+    axios
+      .get(`http://localhost:3000/api/v1/cars/${user.user.id}`)
+      .then((response) => {
+        setCars(response.data.cars);
+      });
+  }, []);
   return (
     <>
       <h2 className="h2 text-center mt-5 text-uppercase"><strong>WELCOME TO THE DELETE AREA</strong></h2>
@@ -35,7 +38,7 @@ const DeleteCar = () => {
           renderBottomCenterControls={false}
         >
 
-          {carInfo.cars.map((car) => (
+          {cars.map((car) => (
             <DeleteCarUi
               key={car.id}
               id={car.id}
