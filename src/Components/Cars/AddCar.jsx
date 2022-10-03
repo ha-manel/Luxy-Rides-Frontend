@@ -8,13 +8,14 @@ import styles from './AddCar.module.css';
 const AddCar = () => {
   const [model, setModel] = useState('');
   const [driver_name, setDriverName] = useState('');
+  const [price, setPrice] = useState('');
   const [picture, setPicture] = useState('');
   const user = useSelector((state) => state.user);
 
   const submitCar = (e) => {
     e.preventDefault();
     const car = {
-      user_id: user.user.id, model, driver_name, picture,
+      user_id: user.user.id, model, driver_name, picture, price,
     };
 
     axios.post('http://localhost:3000/api/v1/car', car);
@@ -67,6 +68,21 @@ const AddCar = () => {
             aria-label=".form-control-lg example"
             value={driver_name}
             onChange={(e) => setDriverName(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="price" className="form-label text-white ms-3">
+            Price per day:
+          </label>
+          <input
+            id="price"
+            className={`${styles.input} form-control form-control-lg px-4 mx-2`}
+            type="number"
+            placeholder="Price"
+            aria-label=".form-control-lg example"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
             required
           />
         </div>

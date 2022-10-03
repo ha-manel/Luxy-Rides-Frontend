@@ -6,7 +6,7 @@ import styles from './Car.module.css';
 import driver from '../../assets/images/driver.png';
 
 const Car = ({
-  id, model, picture, driver_name,
+  id, model, picture, driver_name, price,
 }) => (
   <NavLink className={styles.links} key={id} to={`/car/${id}`}>
     <div className={styles.carCnt} key={id}>
@@ -19,6 +19,11 @@ const Car = ({
           <img src={driver} alt={driver_name} className={styles.driverImg} />
           <h5 className="h6 pt-1">{driver_name}</h5>
         </div>
+        <h5 className={styles.price}>
+          $
+          {' '}
+          {price}
+        </h5>
       </div>
     </div>
   </NavLink>

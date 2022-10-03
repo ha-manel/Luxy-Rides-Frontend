@@ -14,9 +14,19 @@
 
 .carDriver {
   display: flex;
-  gap: 0 20px;
+  gap: 0 10px;
   background-color: #ecf0f1;
   padding: 10px 20px 0 20px;
+}
+
+.price {
+  display: flex;
+  gap: 0 10px;
+  padding: 5px 0 0 18px;
+}
+
+.priceColor {
+  color: var(--primary-green);
 }
 
 .car {
