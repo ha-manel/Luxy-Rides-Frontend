@@ -6,16 +6,27 @@ import styles from './MyReservations.module.css';
 
 const MyReservations = () => {
   const [reservations, setReservations] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const user = useSelector((state) => state.user);
   useEffect(() => {
+    setLoading(true);
     axios
       .get(`http://localhost:3000/api/v1/reservations/${user.user.id}`)
       .then((response) => {
         setReservations(response.data.reservations);
+        setLoading(false);
       });
   }, []);
 
   if (reservations.length <= 0) {
+    if (loading) {
+      return (
+        <div className="container-fluid d-flex justify-content-center align-items-center vh-100">
+          <i className="fa-solid fa-spinner fa-spin fs-1" />
+        </div>
+      );
+    }
     return (
       <h2 className="mt-5 text-center">
         You don&apos;t have any reservations yet.
