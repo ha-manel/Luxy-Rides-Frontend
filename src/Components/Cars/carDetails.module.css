@@ -24,14 +24,6 @@
   margin-top: 80px;
 }
 
-img {
-  transition: transform 2s ease-in-out;
-}
-
-img:hover {
-  transform: rotate(360deg);
-}
-
 .car img {
   min-height: 450px;
   max-height: 451px;
