@@ -120,7 +120,7 @@ const Reserve = () => {
           </button>
         )}
       </form>
-      <p className={styles.zindex}>{errorMessage}</p>
+      <p className={`${styles.zindex} ${styles.errorMsg} fs-5`}>{errorMessage}</p>
     </div>
   );
 };
