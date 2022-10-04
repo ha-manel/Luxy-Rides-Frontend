@@ -1,5 +1,6 @@
 .sidebarCnt {
   width: 260px;
+  padding-right: 0;
 }
 
 .navbarContainer {
@@ -8,7 +9,7 @@
 }
 
 .brandName {
-  font-family: 'Pacifico', cursive;
+  font-family: var(--pacifico);
   color: #000;
 }
 

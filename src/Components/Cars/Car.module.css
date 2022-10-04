@@ -1,0 +1,45 @@
+.links {
+  text-decoration: none;
+  color: rgb(26, 26, 26);
+  transition: 0.1s;
+}
+
+.links:hover {
+  color: var(--primary-green);
+}
+
+.carCnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+.imgCnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carImg {
+  min-height: 350px;
+  max-height: 351px;
+  object-fit: cover;
+  min-width: 250px;
+  max-width: 250px;
+  border-radius: 20px;
+}
+
+.driverImg {
+  width: 10%;
+}
+
+.price {
+  background-color: var(--primary-green);
+  border-radius: 20px;
+  padding: 0.4rem 0.75rem;
+  margin-top: 1rem;
+  color: white;
+  font-weight: 500;
+}

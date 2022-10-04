@@ -1,0 +1,21 @@
+.container {
+  margin-left: -260px;
+}
+
+.header {
+  margin-top: 100px;
+}
+
+.form {
+  width: 350px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin-left: 0;
+  }
+
+  .form {
+    width: 250px;
+  }
+}

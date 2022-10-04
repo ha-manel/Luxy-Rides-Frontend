@@ -29,7 +29,7 @@ const Sidebar = () => (
                 </NavLink>
               </li>
               <li className="w-100">
-                <NavLink to="/reserve" className="nav-link mb-2 fs-5">
+                <NavLink to={`/reserve/${null}`} className="nav-link mb-2 fs-5">
                   <i className="fa-solid fa-car-side me-2" />
                   <span className="ms-1 d-none d-sm-inline">Reserve</span>
                 </NavLink>
@@ -109,7 +109,7 @@ const Sidebar = () => (
         </ul>
       </div>
     </div>
-    <nav className={`${styles.mobileNav} navbar primary-color mb-4 d-md-none`}>
+    <nav className={`${styles.mobileNav} navbar primary-color d-md-none`}>
       <div className="container-fluid d-flex justify-content-between">
         <button
           className={styles.menuBtn}

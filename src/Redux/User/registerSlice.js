@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
   user: null,
@@ -9,39 +10,41 @@ const initialState = {
 export const register = createAsyncThunk(
   'user/register',
   ({ email, name, username }) => {
-    const result = fetch(
-      `http://localhost:3000/api/v1/register/${username}/${name}/${email}`,
-      {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      },
-    ).then((response) => response.json());
+    const result = axios
+      .post(
+        `http://localhost:3000/api/v1/register/${username}/${name}/${email}`,
+      )
+      .then((response) => response.data);
     return result;
   },
 );
 
-export const login = createAsyncThunk(
-  'user/login',
-  (username) => {
-    const result = fetch(
-      `http://localhost:3000/api/v1/login/${username}`,
-      {
-        method: 'get',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      },
-    ).then((response) => response.json());
-    return result;
-  },
-);
+export const login = createAsyncThunk('user/login', (username) => {
+  const result = axios
+    .get(`http://localhost:3000/api/v1/login/${username}`)
+    .then((response) => {
+      localStorage.setItem('user', JSON.stringify(response.data));
+      window.location.reload();
+    });
+  return result;
+});
 
 export const registerSlice = createSlice({
   name: 'register',
   initialState,
-  reducers: {},
+  reducers: {
+    checkUser: () => {
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user) {
+        return user;
+      }
+      return {
+        user,
+        logged_in: false,
+        error: null,
+      };
+    },
+  },
   extraReducers: {
     [register.fulfilled]: (state, action) => ({
       ...state,
@@ -67,3 +70,4 @@ export const registerSlice = createSlice({
 });
 
 export default registerSlice.reducer;
+export const { checkUser } = registerSlice.actions;
