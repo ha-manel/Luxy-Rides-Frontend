@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-// import Carousel from 'nuka-carousel/lib/carousel';
-// import classes from './DeleteCar.module.css';
 import DeleteCarUi from './DeleteCarUi';
 import './Carousel.css';
 
@@ -33,22 +31,6 @@ const DeleteCar = () => {
         Please click on delete button below to delete a car
       </p>
       <div className="container-fluid d-flex flex-wrap justify-content-center">
-        {/* <Carousel
-          renderCenterLeftControls={({ previousSlide }) => (
-            <button type="button" onClick={previousSlide}>
-              <i className="fa-solid fa-caret-left" />
-            </button>
-          )}
-          renderCenterRightControls={({ nextSlide }) => (
-            <button type="button" onClick={nextSlide}>
-              <i className="fa-solid fa-caret-right" />
-            </button>
-          )}
-          className="car-carousel"
-          wrapAround
-          slidesToShow={1}
-          renderBottomCenterControls={false}
-        > */}
         {cars.map((car) => (
           <DeleteCarUi
             key={car.id}
@@ -60,7 +42,6 @@ const DeleteCar = () => {
             setCars={setCars}
           />
         ))}
-        {/* </Carousel> */}
       </div>
     </>
   );
