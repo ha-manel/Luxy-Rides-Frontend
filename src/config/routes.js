@@ -7,6 +7,7 @@ import AddCar from '../Components/Cars/AddCar';
 import Reserve from '../Components/Reserve/Reserve';
 import MyReservations from '../Components/MyReservations/MyReservations';
 import Splash from '../Components/SplashScreen/Splash';
+import DeleteCar from '../Components/DeleteCar/DeleteCar';
 
 const routes = [
   {
@@ -40,10 +41,10 @@ const routes = [
         path: '/add-car',
         element: <AddCar />,
       },
-      // {
-      //   path: '/delete-car',
-      //   element: <DeleteCar />,
-      // },
+      {
+        path: '/delete-car',
+        element: <DeleteCar />,
+      },
       {
         path: '/car/:id',
         element: <CarDetails />,
