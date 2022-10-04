@@ -30,19 +30,6 @@ const routes = [
         element: <Home />,
       },
       {
-        path: '/reserve',
-        element: <Reserve />,
-      },
-      {
-        path: '/reservations',
-        element: <Reservations />,
-      },
-  
-      {
-        path: '/delete-car',
-        element: <DeleteCar />,
-       },
-      {
         path: '/reserve/:id',
         element: <Reserve />,
       },
@@ -54,7 +41,10 @@ const routes = [
         path: '/add-car',
         element: <AddCar />,
       },
-  
+      {
+        path: '/delete-car',
+        element: <DeleteCar />,
+      },
       {
         path: '/car/:id',
         element: <CarDetails />,
