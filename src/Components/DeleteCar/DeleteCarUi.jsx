@@ -11,7 +11,6 @@ const DeleteCarUi = ({
     axios.delete(`http://localhost:3000/api/v1/car/${id}`).then(() => {
       let filteredCars = [];
       filteredCars = cars.filter((car) => car.id !== id);
-      console.log(filteredCars);
       setCars(filteredCars);
     });
   };

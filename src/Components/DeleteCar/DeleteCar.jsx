@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import DeleteCarUi from './DeleteCarUi';
-import './Carousel.css';
 
 const DeleteCar = () => {
   const [cars, setCars] = useState([]);
