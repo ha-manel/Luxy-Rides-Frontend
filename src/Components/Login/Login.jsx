@@ -14,8 +14,8 @@ const Login = () => {
   const formSubmit = (e) => {
     e.preventDefault();
     if (username) {
-      dispatch(login(username));
       setLoading(true);
+      dispatch(login({ username, setLoading }));
     }
   };
 
@@ -51,6 +51,7 @@ const Login = () => {
           </button>
         )}
       </form>
+      <p className={`${styles.errorMsg} fs-5`}>{user.error}</p>
       <NavLink to="/signup">
         <span>Sign up</span>
       </NavLink>
