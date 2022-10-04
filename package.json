@@ -11,6 +11,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "jest": "^27.5.1",
     "moment": "^2.29.4",
     "nuka-carousel": "^5.4.0",
     "prop-types": "^15.8.1",
