@@ -10,7 +10,7 @@ const DeleteCar = () => {
     axios
       .get(`http://localhost:3000/api/v1/cars/${user.user.id}`)
       .then((response) => {
-        setCars(response.data.car);
+        setCars(response.data.cars);
       });
   }, []);
 
