@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import Carousel from 'nuka-carousel/lib/carousel';
-import classes from './DeleteCar.module.css';
+// import Carousel from 'nuka-carousel/lib/carousel';
+// import classes from './DeleteCar.module.css';
 import DeleteCarUi from './DeleteCarUi';
 import './Carousel.css';
 
@@ -26,10 +26,14 @@ const DeleteCar = () => {
   }
   return (
     <>
-      <h2 className="h2 text-center mt-5 text-uppercase"><strong>WELCOME TO THE DELETE AREA</strong></h2>
-      <p className="text-center text-muted mb-5">Please click on delete button below to delete a car</p>
-      <div className={classes.title}>
-        <Carousel
+      <h2 className="h2 text-center mt-5 text-uppercase">
+        <strong>WELCOME TO THE DELETE AREA</strong>
+      </h2>
+      <p className="text-center text-muted mb-5">
+        Please click on delete button below to delete a car
+      </p>
+      <div className="container-fluid d-flex flex-wrap justify-content-center">
+        {/* <Carousel
           renderCenterLeftControls={({ previousSlide }) => (
             <button type="button" onClick={previousSlide}>
               <i className="fa-solid fa-caret-left" />
@@ -44,18 +48,19 @@ const DeleteCar = () => {
           wrapAround
           slidesToShow={1}
           renderBottomCenterControls={false}
-        >
-
-          {cars.map((car) => (
-            <DeleteCarUi
-              key={car.id}
-              id={car.id}
-              image={car.picture}
-              model={car.model}
-              driver_name={car.driver_name}
-            />
-          ))}
-        </Carousel>
+        > */}
+        {cars.map((car) => (
+          <DeleteCarUi
+            key={car.id}
+            id={car.id}
+            image={car.picture}
+            model={car.model}
+            driver_name={car.driver_name}
+            cars={cars}
+            setCars={setCars}
+          />
+        ))}
+        {/* </Carousel> */}
       </div>
     </>
   );

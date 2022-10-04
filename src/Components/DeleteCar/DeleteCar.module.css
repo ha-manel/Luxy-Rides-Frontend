@@ -1,14 +1,9 @@
-.title {
-  margin-left: 260px;
-}
-
 .carCnt {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   min-height: 400px;
-  margin-left: 260px;
 }
 
 .imgCnt {

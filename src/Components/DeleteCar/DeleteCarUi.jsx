@@ -1,24 +1,23 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import classes from './DeleteCar.module.css';
 
 const DeleteCarUi = ({
-  id, image, model, driver_name,
-
+  id, image, model, driver_name, cars, setCars,
 }) => {
   const removeCar = (id) => {
-    fetch(`http://localhost:3000/api/v1/car/${id}`, {
-      method: 'DELETE',
-    }).then((result) => {
-      result.json().then((resp) => {
-        console.warn(resp);
-      });
+    axios.delete(`http://localhost:3000/api/v1/car/${id}`).then(() => {
+      let filteredCars = [];
+      filteredCars = cars.filter((car) => car.id !== id);
+      console.log(filteredCars);
+      setCars(filteredCars);
     });
   };
 
   return (
-    <section className={classes.carCnt} key={id}>
+    <section className={`${classes.carCnt} mx-4`} key={id}>
       <div className={classes.imgCnt}>
         <img src={image} alt={model} className={classes.carImg} />
       </div>
@@ -28,7 +27,13 @@ const DeleteCarUi = ({
           <h5 className="h6 pt-1">{driver_name}</h5>
         </div>
       </div>
-      <button type="button" onClick={() => removeCar(id)} className="btn btn-primary mb-3">Delete</button>
+      <button
+        type="button"
+        onClick={() => removeCar(id)}
+        className="btn btn-danger mb-3"
+      >
+        Delete
+      </button>
     </section>
   );
 };
@@ -38,6 +43,8 @@ DeleteCarUi.propTypes = {
   model: PropTypes.string.isRequired,
   driver_name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
+  cars: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])).isRequired,
+  setCars: PropTypes.func.isRequired,
 };
 
 export default DeleteCarUi;
