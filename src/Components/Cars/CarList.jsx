@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import Carousel from 'nuka-carousel/lib/carousel';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { getCars } from '../../Redux/Car/carSlice';
 import Car from './Car';
 import './Carousel.css';
 
 const CarList = () => {
+  const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(false);
-  const dispatch = useDispatch();
   useEffect(() => {
     setLoading(true);
-    dispatch(getCars());
+    axios
+      .get('http://localhost:3000/api/v1/cars')
+      .then((response) => setCars(response.data.cars));
     setLoading(false);
-  }, [dispatch]);
-  const Cars = useSelector((state) => state.cars);
+  }, []);
+
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up('md'));
   const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
@@ -60,7 +60,7 @@ const CarList = () => {
           slidesToShow={SlideToShowNumber}
           renderBottomCenterControls={false}
         >
-          {Cars.cars.map((car) => (
+          {cars.cars.map((car) => (
             <Car
               key={car.id}
               id={car.id}
