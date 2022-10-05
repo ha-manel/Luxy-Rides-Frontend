@@ -49,7 +49,7 @@ Clone the repository using the GitHub link provided below.
 
 In the terminal, go to your file directory and run this command.
 ```
-$ git clone git@github.com:ha-manel/Luxy-Ride-Frontend.git
+$ git clone git@github.com:ha-manel/Luxy-Rides-Frontend.git
 ```
 ### Usage
 
@@ -58,7 +58,7 @@ $ git clone git@github.com:ha-manel/Luxy-Ride-Frontend.git
 Make your way to the correct directory by running this command:
 
 ```
-$ cd Luxy-Ride-Frontend
+$ cd Luxy-Rides-Frontend
 ```
 
 Install the required dependencies to run the project with this command:
