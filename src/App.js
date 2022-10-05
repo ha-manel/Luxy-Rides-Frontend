@@ -6,7 +6,7 @@ import Sidebar from './Components/SideBar/Sidebar';
 import routes from './config/routes';
 import { checkUser } from './Redux/User/registerSlice';
 
-function App() {
+const App = () => {
   const appRoutes = useRoutes(routes);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -21,6 +21,6 @@ function App() {
       <main className="mainCnt">{appRoutes}</main>
     </>
   );
-}
+};
 
 export default App;
