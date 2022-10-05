@@ -10,19 +10,35 @@ const AddCar = () => {
   const [driver_name, setDriverName] = useState('');
   const [price, setPrice] = useState('');
   const [picture, setPicture] = useState('');
+  const [responseMsg, setResponseMsg] = useState('');
+  const [loading, setLoading] = useState(false);
   const user = useSelector((state) => state.user);
 
   const submitCar = (e) => {
     e.preventDefault();
+    setLoading(true);
     const car = {
-      user_id: user.user.id, model, driver_name, picture, price,
+      user_id: user.user.id,
+      model,
+      driver_name,
+      picture,
+      price,
     };
 
-    axios.post('https://luxy-rides-api.herokuapp.com/api/v1/car', car);
-
-    setModel('');
-    setDriverName('');
-    setPicture('');
+    axios
+      .post('https://luxy-rides-api.herokuapp.com/api/v1/car', car)
+      .then((response) => {
+        setLoading(false);
+        setModel('');
+        setDriverName('');
+        setPicture('');
+        setPrice('');
+        setResponseMsg(response.data.success);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setResponseMsg(err.response.data.error);
+      });
   };
 
   return (
@@ -31,7 +47,8 @@ const AddCar = () => {
     >
       <h2 className={`${styles.zindex} fs-1 text-white`}>Add Car</h2>
       <p className={`${styles.zindex} fs-5 text-white text-center`}>
-        You got a fancy car from which you wanna make some extra bucks $? Add it on our website!
+        You got a fancy car from which you wanna make some extra bucks $? Add it
+        on our website!
       </p>
       <hr className={styles.hr} />
       <p className={`${styles.zindex} mb-5 fs-5 text-white`}>
@@ -83,6 +100,7 @@ const AddCar = () => {
             aria-label=".form-control-lg example"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
+            min="0"
             required
           />
         </div>
@@ -101,10 +119,20 @@ const AddCar = () => {
             required
           />
         </div>
-        <button type="submit" className={`${styles.btn} btn px-4 ms-4`}>
-          Add
-        </button>
+        {loading ? (
+          <button
+            type="button"
+            className={`${styles.btn} btn px-4 ms-4 disabled`}
+          >
+            <i className="fa-solid fa-spinner fa-spin" />
+          </button>
+        ) : (
+          <button type="submit" className={`${styles.btn} btn px-4 ms-4`}>
+            Add
+          </button>
+        )}
       </form>
+      <p className={`${styles.zindex} fs-5 fw-semibold`}>{responseMsg}</p>
     </div>
   );
 };

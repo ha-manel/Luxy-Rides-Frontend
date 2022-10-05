@@ -10,6 +10,11 @@
   width: 350px;
 }
 
+.errorMsg {
+  color: red;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 768px) {
   .container {
     margin-left: 0;
