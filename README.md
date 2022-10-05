@@ -1,4 +1,4 @@
-# Luxy Ride
+# Luxy Ride Frontend
 
 This project is based on reservation of fancy cars. If you're looking for a special for a special day/event this web app is the best place for you. If you are have a luxury car and want to make some extra money on it, you can add that to our web app! Main features of this web app are:
 
@@ -9,6 +9,7 @@ This project is based on reservation of fancy cars. If you're looking for a spec
 
 ## Project Documentation 📄
 
+- Here you can checkout the [backend repository](https://github.com/ha-manel/Luxy-Ride-API) for this project.
 - Here is the deployed app on [Vercel](https://luxy-ride-frontend.vercel.app/)👈
  
 ## Built With 🛠️
@@ -47,6 +48,8 @@ $ git clone git@github.com:ha-manel/Luxy-Ride-Frontend.git
 ```
 ### Usage
 
+Kindly modify the files as needed.
+
 ### Run locally
 
 Make your way to the correct directory by running this command:
@@ -59,15 +62,11 @@ Install the required libraries needed to run the project by this command:
 ```
 $ npm install
 ```
-
 and then to see in your browser, write this command:
 
 ```
 $ npm start
 ```
-
-Kindly modify the files as needed.
-
 ### Run tests
 
 To run tests, please run this command
