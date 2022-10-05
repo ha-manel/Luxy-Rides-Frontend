@@ -129,6 +129,16 @@ const Sidebar = () => {
                 Delete Car
               </NavLink>
             </li>
+            <li className="nav-item mb-2">
+              <button
+                type="button"
+                className={`${styles.mobileNavLink} nav-link btn btn-danger`}
+                onClick={() => logout()}
+              >
+                <i className="fa-solid fa-arrow-right-from-bracket me-2" />
+                Logout
+              </button>
+            </li>
           </ul>
         </div>
       </div>
