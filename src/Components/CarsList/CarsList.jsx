@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
 import Carousel from 'nuka-carousel/lib/carousel';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { getCars } from '../../Redux/Car/carSlice';
-import Car from './Car';
+import CarCard from './CarCard';
 import './Carousel.css';
 
 const CarList = () => {
+  const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(false);
-  const dispatch = useDispatch();
   useEffect(() => {
     setLoading(true);
-    dispatch(getCars());
-    setLoading(false);
-  }, [dispatch]);
-  const Cars = useSelector((state) => state.cars);
+    axios
+      .get('https://luxy-rides-api.herokuapp.com/api/v1/cars')
+      .then((response) => {
+        setCars(response.data.cars);
+        setLoading(false);
+      });
+  }, []);
+
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up('md'));
   const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
@@ -60,8 +63,8 @@ const CarList = () => {
           slidesToShow={SlideToShowNumber}
           renderBottomCenterControls={false}
         >
-          {Cars.cars.map((car) => (
-            <Car
+          {cars.map((car) => (
+            <CarCard
               key={car.id}
               id={car.id}
               model={car.model}

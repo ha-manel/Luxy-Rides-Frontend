@@ -88,6 +88,12 @@
   margin-left: 20px;
 }
 
+.errorMsg {
+  color: red;
+  font-weight: 500;
+  font-size: 16px;
+}
+
 @media screen and (max-width: 890px) {
   .carCard {
     width: 500px;
@@ -99,6 +105,15 @@
     height: 150px;
     object-fit: cover;
     border-radius: 10px;
+  }
+
+  .input {
+    width: 170px;
+  }
+
+  .errorMsg {
+    font-size: 15px;
+    text-align: center;
   }
 }
 
@@ -129,9 +144,9 @@
     margin-top: 20px;
     margin-left: 10px;
   }
-}
 
-.errorMsg {
-  color: red;
-  font-weight: 500;
+  .errorMsg {
+    font-size: 14px;
+    text-align: center;
+  }
 }

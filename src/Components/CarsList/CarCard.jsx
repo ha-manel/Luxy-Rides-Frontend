@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from './Car.module.css';
+import styles from './CarCard.module.css';
 import driver from '../../assets/images/driver.png';
 
 const Car = ({
