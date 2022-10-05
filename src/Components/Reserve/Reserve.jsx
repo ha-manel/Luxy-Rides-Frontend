@@ -16,11 +16,13 @@ const Reserve = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const user = useSelector((state) => state.user);
 
+  const today = new Date().toISOString().slice(0, 10);
+
   const findCars = (e) => {
     e.preventDefault();
     if (date && city) {
       axios
-        .get(`http://localhost:3000/api/v1/reserve/cars/${date}`)
+        .get(`https://luxy-rides-api.herokuapp.com/api/v1/reserve/cars/${date}`)
         .then((response) => setCars(response.data.cars));
       setLoading(true);
     }
@@ -32,9 +34,9 @@ const Reserve = () => {
       setLoading(true);
       axios
         .post(
-          `http://localhost:3000/api/v1/reservation/${user.user.id}/${Number(
-            id,
-          )}/${city}/${date}`,
+          `https://luxy-rides-api.herokuapp.com/api/v1/reservation/${
+            user.user.id
+          }/${Number(id)}/${city}/${date}`,
         )
         .then(() => {
           setReserved(true);
@@ -103,6 +105,7 @@ const Reserve = () => {
             placeholder="Date"
             aria-label=".form-control-lg example"
             value={date}
+            min={today}
             required
             onChange={(e) => setDate(e.target.value)}
           />
@@ -120,7 +123,7 @@ const Reserve = () => {
           </button>
         )}
       </form>
-      <p className={`${styles.zindex} ${styles.errorMsg} fs-5`}>{errorMessage}</p>
+      <p className={`${styles.zindex} ${styles.errorMsg}`}>{errorMessage}</p>
     </div>
   );
 };

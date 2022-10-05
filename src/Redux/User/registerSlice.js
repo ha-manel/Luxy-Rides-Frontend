@@ -9,25 +9,46 @@ const initialState = {
 
 export const register = createAsyncThunk(
   'user/register',
-  ({ email, name, username }) => {
+  ({
+    email, name, username, setLoading,
+  }) => {
     const result = axios
       .post(
-        `http://localhost:3000/api/v1/register/${username}/${name}/${email}`,
+        `https://luxy-rides-api.herokuapp.com/api/v1/register/${username}/${name}/${email}`,
       )
-      .then((response) => response.data);
+      .then((response) => response.data)
+      .catch((error) => {
+        setLoading(false);
+        return {
+          user: null,
+          logged_in: false,
+          error: error.response.data.error,
+        };
+      });
     return result;
   },
 );
 
-export const login = createAsyncThunk('user/login', (username) => {
-  const result = axios
-    .get(`http://localhost:3000/api/v1/login/${username}`)
-    .then((response) => {
-      localStorage.setItem('user', JSON.stringify(response.data));
-      window.location.reload();
-    });
-  return result;
-});
+export const login = createAsyncThunk(
+  'user/login',
+  ({ username, setLoading }) => {
+    const result = axios
+      .get(`https://luxy-rides-api.herokuapp.com/api/v1/login/${username}`)
+      .then((response) => {
+        localStorage.setItem('user', JSON.stringify(response.data));
+        window.location.reload();
+      })
+      .catch((error) => {
+        setLoading(false);
+        return {
+          user: null,
+          logged_in: false,
+          error: error.response.data.error,
+        };
+      });
+    return result;
+  },
+);
 
 export const registerSlice = createSlice({
   name: 'register',
