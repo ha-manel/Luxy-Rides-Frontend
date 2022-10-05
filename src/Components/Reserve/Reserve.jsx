@@ -16,6 +16,8 @@ const Reserve = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const user = useSelector((state) => state.user);
 
+  const today = new Date().toISOString().slice(0, 10);
+
   const findCars = (e) => {
     e.preventDefault();
     if (date && city) {
@@ -103,6 +105,7 @@ const Reserve = () => {
             placeholder="Date"
             aria-label=".form-control-lg example"
             value={date}
+            min={today}
             required
             onChange={(e) => setDate(e.target.value)}
           />
