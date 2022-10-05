@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import DeleteCarUi from './DeleteCarUi';
+import CarCard from './CarCard';
 
 const DeleteCar = () => {
   const [cars, setCars] = useState([]);
   const user = useSelector((state) => state.user);
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/v1/cars/${user.user.id}`)
+      .get(`https://luxy-rides-api.herokuapp.com/api/v1/cars/${user.user.id}`)
       .then((response) => {
         setCars(response.data.cars);
       });
@@ -31,7 +31,7 @@ const DeleteCar = () => {
       </p>
       <div className="container-fluid d-flex flex-wrap justify-content-center">
         {cars.map((car) => (
-          <DeleteCarUi
+          <CarCard
             key={car.id}
             id={car.id}
             image={car.picture}

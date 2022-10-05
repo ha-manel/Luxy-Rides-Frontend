@@ -14,7 +14,7 @@ export const register = createAsyncThunk(
   }) => {
     const result = axios
       .post(
-        `https://luxy-rides-api.herokuapp.com/api/v1/register/${username}/${name}/${email}`
+        `https://luxy-rides-api.herokuapp.com/api/v1/register/${username}/${name}/${email}`,
       )
       .then((response) => response.data)
       .catch((error) => {

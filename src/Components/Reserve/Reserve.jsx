@@ -34,7 +34,7 @@ const Reserve = () => {
         .post(
           `https://luxy-rides-api.herokuapp.com/api/v1/reservation/${
             user.user.id
-          }/${Number(id)}/${city}/${date}`
+          }/${Number(id)}/${city}/${date}`,
         )
         .then(() => {
           setReserved(true);

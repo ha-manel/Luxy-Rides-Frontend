@@ -3,7 +3,7 @@ import axios from 'axios';
 import Carousel from 'nuka-carousel/lib/carousel';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import Car from './Car';
+import CarCard from './CarCard';
 import './Carousel.css';
 
 const CarList = () => {
@@ -12,9 +12,11 @@ const CarList = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('http://localhost:3000/api/v1/cars')
-      .then((response) => setCars(response.data.cars));
-    setLoading(false);
+      .get('https://luxy-rides-api.herokuapp.com/api/v1/cars')
+      .then((response) => {
+        setCars(response.data.cars);
+        setLoading(false);
+      });
   }, []);
 
   const theme = useTheme();
@@ -61,8 +63,8 @@ const CarList = () => {
           slidesToShow={SlideToShowNumber}
           renderBottomCenterControls={false}
         >
-          {cars.cars.map((car) => (
-            <Car
+          {cars.map((car) => (
+            <CarCard
               key={car.id}
               id={car.id}
               model={car.model}

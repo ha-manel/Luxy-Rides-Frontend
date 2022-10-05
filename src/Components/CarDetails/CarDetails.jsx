@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import axios from 'axios';
-import styles from './carDetails.module.css';
+import styles from './CarDetails.module.css';
 
 const CarDetails = () => {
   const { id } = useParams();
@@ -9,7 +9,7 @@ const CarDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/v1/car/${id}`)
+      .get(`https://luxy-rides-api.herokuapp.com/api/v1/car/${id}`)
       .then((response) => setCar(response.data.car));
   }, []);
 

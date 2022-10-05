@@ -1,9 +1,9 @@
 import React from 'react';
-import CarList from '../Cars/CarList';
+import CarsList from '../CarsList/CarsList';
 
 const Home = () => (
   <div>
-    <CarList />
+    <CarsList />
   </div>
 );
 

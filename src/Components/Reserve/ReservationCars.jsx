@@ -17,7 +17,7 @@ const ReservationCars = ({
     e.preventDefault();
     axios
       .post(
-        `http://localhost:3000/api/v1/reservation/${user.user.id}/${car.id}/${city}/${date}`,
+        `https://luxy-rides-api.herokuapp.com/api/v1/reservation/${user.user.id}/${car.id}/${city}/${date}`,
       )
       .then(() => setReserved(true));
     setLoading(true);

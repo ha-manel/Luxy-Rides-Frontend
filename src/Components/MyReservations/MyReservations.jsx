@@ -12,7 +12,9 @@ const MyReservations = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:3000/api/v1/reservations/${user.user.id}`)
+      .get(
+        `https://luxy-rides-api.herokuapp.com/api/v1/reservations/${user.user.id}`,
+      )
       .then((response) => {
         setReservations(response.data.reservations);
         setLoading(false);
