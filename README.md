@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# Luxy Ride
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is based on reservation of fancy cars. If you're looking for a special for a special day/event this web app is the best place for you. If you are have a luxury car and want to make some extra money on it, you can add that to our web app! Main features of this web app are:
 
-## Available Scripts
+ - User can see details of all the cars.
+ - Users can reserve a car, but they can't reserve the same car twice on the same day.
+ - Users can add their own cars and remove them if they want.
 
-In the project directory, you can run:
 
-### `npm start`
+## Project Documentation 📄
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Here is the deployed app on [Vercel](https://luxy-ride-frontend.vercel.app/)👈
+ 
+## Built With 🛠️
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ - Programming Language: HTML, CSS, JavaScript
+ - Framework: React, Redux and Bootstrap
+ - Code Editor: VS Code
+ 
+## Getting Started
+ 
+To get a local copy up and running follow these simple steps.
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- A web browser like Google Chrome.
+- A code editor like Visual Studio Code with Git and nodejs.
 
-### `npm run build`
+> You can check if Git is installed by running the following command in the terminal.
+```
+$ git --version
+```
+> Likewise for Node installation.
+```
+$ node --version
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the repository using the GitHub link provided below.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Install
 
-### `npm run eject`
+In the terminal, go to your file directory and run this command.
+```
+$ git clone git@github.com:ha-manel/Luxy-Ride-Frontend.git
+```
+### Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Run locally
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Make your way to the correct directory by running this command:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+$ cd Luxy-Ride-Frontend
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Install the required libraries needed to run the project by this command:
+```
+$ npm install
+```
 
-## Learn More
+and then to see in your browser, write this command:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+$ npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Kindly modify the files as needed.
 
-### Code Splitting
+### Run tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To run tests, please run this command
+```
+$ npm run test
+```
+## Authors
 
-### Analyzing the Bundle Size
+👤 **Manel Hammouche** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- <img src="https://user-images.githubusercontent.com/67911212/185442918-aa30589c-c9f9-4edb-8955-1036ceebd5c2.png" width="18"/> [ha-manel](https://github.com/ha-manel)
+- <img src="https://user-images.githubusercontent.com/67911212/185441124-47527d95-39c5-4984-9d2c-a130be72bd50.png" width="18"/> [ha_manel_](https://twitter.com/ha_manel_)
+- <img src="https://user-images.githubusercontent.com/67911212/185442306-ef777855-06ac-4e36-b649-6f0dda869366.png" width="18"/> [Manel Hammouche](https://www.linkedin.com/in/manel-hammouche/)
 
-### Making a Progressive Web App
+👤 **Toussaint Saraza** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- <img src="https://user-images.githubusercontent.com/67911212/185442918-aa30589c-c9f9-4edb-8955-1036ceebd5c2.png" width="18"/> [sarazaToussaint](https://github.com/sarazaToussaint)
+- <img src="https://user-images.githubusercontent.com/67911212/185441124-47527d95-39c5-4984-9d2c-a130be72bd50.png" width="18"/> [toussaintSaraz1](https://twitter.com/ToussaintSaraz1)
+- <img src="https://user-images.githubusercontent.com/67911212/185442306-ef777855-06ac-4e36-b649-6f0dda869366.png" width="18"/> [Toussaint Saraza](https://www.linkedin.com/in/toussaintsaraza/)
 
-### Advanced Configuration
+👤 **Hammad Siddique** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- <img src="https://user-images.githubusercontent.com/67911212/185442918-aa30589c-c9f9-4edb-8955-1036ceebd5c2.png" width="18"/> [HammadSiddique](https://github.com/HammadSiddique)
+- <img src="https://user-images.githubusercontent.com/67911212/185441124-47527d95-39c5-4984-9d2c-a130be72bd50.png" width="18"/> [hs_devv](https://twitter.com/hs_devv)
+- <img src="https://user-images.githubusercontent.com/67911212/185442306-ef777855-06ac-4e36-b649-6f0dda869366.png" width="18"/> [HammadSiddique](https://www.linkedin.com/in/-hammadsiddique/)
 
-### Deployment
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Contributions, issues, and feature requests are welcome!
 
-### `npm run build` fails to minify
+Feel free to check the [issues page](../../issues/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+- [Microverse](https://www.microverse.org/)
+- Original design idea by [Murat Korkmaz on Behance](https://www.behance.net/muratk).
+- [FontAwesome](https://fontawesome.com/) for icons.
+- [Unsplash](https://unsplash.com/) for images.
+- [Flaticon](https://www.flaticon.com/) for icon.
+
+## 📝 License
+This project is MIT licensed.
