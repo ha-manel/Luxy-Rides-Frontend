@@ -16,8 +16,10 @@ const Register = () => {
   const formSubmit = (e) => {
     e.preventDefault();
     if (email && name && username) {
-      dispatch(register({ email, name, username }));
       setLoading(true);
+      dispatch(register({
+        email, name, username, setLoading,
+      }));
     }
   };
 
@@ -77,6 +79,9 @@ const Register = () => {
           </button>
         )}
       </form>
+      <p className={`${styles.errorMsg} fs-5`}>
+        {user.error}
+      </p>
       <NavLink to="/login">
         <span>Log in</span>
       </NavLink>

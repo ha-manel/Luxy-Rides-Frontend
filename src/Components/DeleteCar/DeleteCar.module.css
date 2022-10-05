@@ -20,3 +20,8 @@
   max-width: 250px;
   border-radius: 20px;
 }
+
+.errorMsg {
+  color: red;
+  font-weight: 500;
+}
