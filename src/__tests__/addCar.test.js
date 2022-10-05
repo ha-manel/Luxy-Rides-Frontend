@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import AddCar from '../Components/Cars/AddCar';
+import AddCar from '../Components/AddCar/AddCar';
 import store from '../Redux/configureStore';
 
 describe('Add car form tests', () => {

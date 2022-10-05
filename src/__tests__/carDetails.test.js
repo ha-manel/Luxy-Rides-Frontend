@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import CarDetails from '../Components/Cars/CarDetails';
+import CarDetails from '../Components/CarDetails/CarDetails';
 import store from '../Redux/configureStore';
 
 describe('Car detail tests', () => {
