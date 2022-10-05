@@ -1,15 +1,15 @@
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import Home from '../Components/Home/Home';
+import CarDetails from '../Components/Cars/CarDetails';
 import store from '../Redux/configureStore';
 
-describe('Home tests', () => {
+describe('Car detail tests', () => {
   it('renders correctly', () => {
     const tree = render(
       <Provider store={store}>
         <BrowserRouter>
-          <Home />
+          <CarDetails />
         </BrowserRouter>
       </Provider>,
     );

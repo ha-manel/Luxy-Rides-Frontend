@@ -1,46 +1,46 @@
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import Login from '../Components/Login/Login';
+import Splash from '../Components/SplashScreen/Splash';
 import store from '../Redux/configureStore';
 
-describe('Log in tests', () => {
+describe('Splash screen tests', () => {
   it('renders correctly', () => {
     const tree = render(
       <Provider store={store}>
         <BrowserRouter>
-          <Login />
+          <Splash />
         </BrowserRouter>
       </Provider>,
     );
     expect(tree).toMatchSnapshot();
   });
 
-  it('Log in page has log in button', () => {
-    const login = render(
+  it('Splash page has a sign up link', () => {
+    const register = render(
       <>
         <Provider store={store}>
           <BrowserRouter>
-            <Login />
+            <Splash />
           </BrowserRouter>
         </Provider>
       </>,
     );
 
-    expect(login.findByText('Log in')).toBeTruthy();
+    expect(register.findByText('Sign up')).toBeTruthy();
   });
 
-  it('Log in page has a sign up link', () => {
-    const login = render(
+  it('Splash page has a log in link', () => {
+    const register = render(
       <>
         <Provider store={store}>
           <BrowserRouter>
-            <Login />
+            <Splash />
           </BrowserRouter>
         </Provider>
       </>,
     );
 
-    expect(login.findByText('Sign up')).toBeTruthy();
+    expect(register.findByText('Log in')).toBeTruthy();
   });
 });

@@ -11,7 +11,7 @@ describe('Register tests', () => {
         <BrowserRouter>
           <Register />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -24,7 +24,7 @@ describe('Register tests', () => {
             <Register />
           </BrowserRouter>
         </Provider>
-      </>
+      </>,
     );
 
     expect(register.findByText('Sign up')).toBeTruthy();
@@ -38,7 +38,7 @@ describe('Register tests', () => {
             <Register />
           </BrowserRouter>
         </Provider>
-      </>
+      </>,
     );
 
     expect(register.findByText('Log in')).toBeTruthy();
