@@ -5,6 +5,17 @@ import Login from '../Components/Login/Login';
 import store from '../Redux/configureStore';
 
 describe('Log in tests', () => {
+   it('renders correctly', () => {
+     const tree = render(
+       <Provider store={store}>
+         <BrowserRouter>
+           <Login />
+         </BrowserRouter>
+       </Provider>
+     );
+     expect(tree).toMatchSnapshot();
+   });
+
   it('Log in page has log in button', () => {
     const login = render(
       <>

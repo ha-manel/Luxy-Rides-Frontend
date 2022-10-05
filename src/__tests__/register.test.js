@@ -5,6 +5,17 @@ import Register from '../Components/Register/Register';
 import store from '../Redux/configureStore';
 
 describe('Register tests', () => {
+  it('renders correctly', () => {
+    const tree = render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Register />
+        </BrowserRouter>
+      </Provider>
+    );
+    expect(tree).toMatchSnapshot();
+  });
+
   it('Register page has sign up button', () => {
     const register = render(
       <>
