@@ -20,7 +20,7 @@ const Reserve = () => {
     e.preventDefault();
     if (date && city) {
       axios
-        .get(`http://localhost:3000/api/v1/reserve/cars/${date}`)
+        .get(`https://luxy-rides-api.herokuapp.com/api/v1/reserve/cars/${date}`)
         .then((response) => setCars(response.data.cars));
       setLoading(true);
     }
@@ -32,9 +32,9 @@ const Reserve = () => {
       setLoading(true);
       axios
         .post(
-          `http://localhost:3000/api/v1/reservation/${user.user.id}/${Number(
-            id,
-          )}/${city}/${date}`,
+          `https://luxy-rides-api.herokuapp.com/api/v1/reservation/${
+            user.user.id
+          }/${Number(id)}/${city}/${date}`
         )
         .then(() => {
           setReserved(true);

@@ -12,7 +12,7 @@ export const register = createAsyncThunk(
   ({ email, name, username }) => {
     const result = axios
       .post(
-        `http://localhost:3000/api/v1/register/${username}/${name}/${email}`,
+        `https://luxy-rides-api.herokuapp.com/api/v1/register/${username}/${name}/${email}`
       )
       .then((response) => response.data);
     return result;
@@ -21,7 +21,7 @@ export const register = createAsyncThunk(
 
 export const login = createAsyncThunk('user/login', (username) => {
   const result = axios
-    .get(`http://localhost:3000/api/v1/login/${username}`)
+    .get(`https://luxy-rides-api.herokuapp.com/api/v1/login/${username}`)
     .then((response) => {
       localStorage.setItem('user', JSON.stringify(response.data));
       window.location.reload();

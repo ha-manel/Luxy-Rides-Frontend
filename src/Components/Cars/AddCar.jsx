@@ -18,7 +18,7 @@ const AddCar = () => {
       user_id: user.user.id, model, driver_name, picture, price,
     };
 
-    axios.post('http://localhost:3000/api/v1/car', car);
+    axios.post('https://luxy-rides-api.herokuapp.com/api/v1/car', car);
 
     setModel('');
     setDriverName('');
