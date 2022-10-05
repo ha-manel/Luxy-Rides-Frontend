@@ -24,7 +24,7 @@ Main features of this website are:
 ### Initial state of the Kanban Board:
 ![image](https://user-images.githubusercontent.com/50721479/194104684-a457aaeb-762c-453b-a78c-c6405cb7a914.png)
 
-### Team members: 3 (Hammouche Manel, Hammad Siddique, Toussaint Saraza)
+### Team members: 3 (Manel Hammouche, Hammad Siddique, Toussaint Saraza)
  
 ## Built With 🛠️
 
