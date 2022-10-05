@@ -57,6 +57,7 @@
   font-size: 17px;
   font-weight: 500;
   border-radius: 25px;
+  margin-bottom: 14px;
 }
 
 .btn:hover {
@@ -69,69 +70,24 @@
   z-index: 3;
 }
 
-.carCard {
-  width: 600px;
-  background-color: #fffcf2;
-  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-.carImg {
-  width: 250px;
-  min-height: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.carInfo {
-  color: var(--primary-green);
-  margin-top: 50px;
-  margin-left: 20px;
-}
-
-@media screen and (max-width: 890px) {
-  .carCard {
-    width: 500px;
-  }
-
-  .carImg {
-    width: 200px;
-    min-height: 200px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-}
-
-@media screen and (max-width: 1240px) {
+@media screen and (max-width: 1250px) {
   .form {
     flex-direction: column;
   }
 
-  .input {
-    margin: 10px 0;
+  .btn {
+    margin-top: 10px;
+    margin-bottom: 0;
   }
 }
 
-@media screen and (max-width: 550px) {
-  .carCard {
-    width: 90%;
-    min-width: 350px;
-    max-width: 600px;
-  }
-
-  .carImg {
+@media screen and (max-width: 450px) {
+  .input {
     width: 150px;
-    min-height: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
+    font-size: 15px;
   }
 
-  .carInfo {
-    margin-top: 20px;
-    margin-left: 10px;
+  .btn {
+    font-size: 15px;
   }
 }

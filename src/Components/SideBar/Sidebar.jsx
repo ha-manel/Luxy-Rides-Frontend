@@ -99,7 +99,7 @@ const Sidebar = () => {
             </li>
             <li className="nav-item mb-2">
               <NavLink
-                to="/reserve"
+                to={`/reserve/${null}`}
                 className={`${styles.mobileNavLink} nav-link`}
               >
                 Reserve
