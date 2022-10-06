@@ -14,7 +14,7 @@
   height: 100%;
   background-image: url('https://images.unsplash.com/photo-1575496917055-f23c822796eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: 50%;
 }
 
@@ -40,4 +40,14 @@
 .btncontainer {
   margin-top: 0;
   z-index: 3;
+}
+
+@media screen and (max-width: 768px) {
+  .splashbg {
+    margin-left: 0;
+  }
+
+  .header {
+    font-size: 50px;
+  }
 }
