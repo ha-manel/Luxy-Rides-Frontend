@@ -1,0 +1,39 @@
+.sidebarCnt {
+  width: 260px;
+  padding-right: 0;
+}
+
+.navbarContainer {
+  background-color: #fefefe;
+  border-right: 1px solid #f0f5f2;
+}
+
+.brandName {
+  font-family: var(--pacifico);
+  color: #000;
+}
+
+.mobileMenu {
+  background-color: #fefefe;
+}
+
+.mobileNav {
+  background-color: #fefefe;
+  border-bottom: 1px solid #f0f5f2;
+}
+
+.mobileNavLink {
+  width: 150px;
+  text-decoration: none;
+  color: var(--gray-text);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.menuBtn {
+  color: #000;
+  font-size: 25px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}

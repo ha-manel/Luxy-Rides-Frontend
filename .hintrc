@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "width: -moz-fit-content",
+          "width: fit-content"
+        ]
+      }
+    ]
+  }
+}

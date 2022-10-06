@@ -1,0 +1,45 @@
+.slider-control-centerright button {
+  border: none;
+  color: white;
+  font-size: 2rem;
+  background-color: #adb5bd;
+  padding: 0 2rem;
+  border-radius: 25px 0 0 25px;
+  transition: 0.2s;
+}
+
+.slider-control-centerleft button {
+  border: none;
+  color: white;
+  font-size: 2rem;
+  background-color: #adb5bd;
+  padding: 0 2rem;
+  border-radius: 0 25px 25px 0;
+  transition: 0.2s;
+}
+
+.slider-control-centerright button:hover {
+  background-color: #97c010;
+}
+
+.slider-control-centerleft button:hover {
+  background-color: #97c010;
+}
+
+.slide {
+  width: fit-content;
+}
+
+.slider-container {
+  padding: 0 30px;
+}
+
+@media screen and (max-width: 550px) {
+  .slider-control-centerright button {
+    padding: 0 1.25rem;
+  }
+
+  .slider-control-centerleft button {
+    padding: 0 1.25rem;
+  }
+}

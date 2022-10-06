@@ -1,0 +1,29 @@
+.card {
+  width: 470px;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0 3px 7px -3px;
+  padding: 10px;
+}
+
+.img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.car {
+  color: var(--primary-green);
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 350px;
+  }
+
+  .img {
+    width: 100px;
+    height: 100px;
+  }
+}

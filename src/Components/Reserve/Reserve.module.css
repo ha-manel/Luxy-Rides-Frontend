@@ -1,0 +1,152 @@
+.cnt {
+  height: 100vh;
+  position: relative;
+}
+
+.cnt::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1604946881982-a3321fcf07f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.cnt::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-green);
+  opacity: 0.8;
+}
+
+.hr {
+  width: 50%;
+  border: 1px solid #fff;
+  z-index: 3;
+}
+
+.input {
+  width: 200px;
+  border-radius: 25px;
+  background-color: var(--primary-green);
+  color: #fff;
+  border-color: #fff;
+}
+
+.input::placeholder {
+  color: #fff;
+}
+
+.btn {
+  height: 42.25px;
+  color: var(--primary-green);
+  background-color: #fff;
+  border-color: var(--primary-green);
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 25px;
+}
+
+.btn:hover {
+  background-color: var(--primary-green) !important;
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.zindex {
+  z-index: 3;
+}
+
+.carCard {
+  width: 600px;
+  background-color: #fffcf2;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.carImg {
+  width: 250px;
+  min-height: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carInfo {
+  color: var(--primary-green);
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+.errorMsg {
+  color: red;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 890px) {
+  .carCard {
+    width: 500px;
+  }
+
+  .carImg {
+    width: 200px;
+    min-height: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .input {
+    width: 170px;
+  }
+
+  .errorMsg {
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .form {
+    flex-direction: column;
+  }
+
+  .input {
+    margin: 10px 0;
+  }
+
+  .carCard {
+    width: 90%;
+    min-width: 350px;
+    max-width: 600px;
+  }
+
+  .carImg {
+    width: 150px;
+    min-height: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .carInfo {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  .errorMsg {
+    font-size: 14px;
+    text-align: center;
+  }
+}

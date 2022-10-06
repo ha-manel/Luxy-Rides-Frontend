@@ -1,0 +1,26 @@
+.container {
+  margin-left: -260px;
+}
+
+.header {
+  margin-top: 80px;
+}
+
+.form {
+  width: 350px;
+}
+
+.errorMsg {
+  color: red;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin-left: 0;
+  }
+
+  .form {
+    width: 250px;
+  }
+}
