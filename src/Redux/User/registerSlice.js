@@ -16,7 +16,10 @@ export const register = createAsyncThunk(
       .post(
         `https://luxy-rides-api.herokuapp.com/api/v1/register/${username}/${name}/${email}`,
       )
-      .then((response) => response.data)
+      .then((response) => {
+        localStorage.setItem('user', JSON.stringify(response.data));
+        window.location.reload();
+      })
       .catch((error) => {
         setLoading(false);
         return {
