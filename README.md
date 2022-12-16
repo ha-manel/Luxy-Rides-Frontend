@@ -14,7 +14,7 @@ Main features of this website are:
 ## Project Documentation 📄
 
 - Live demo [link](https://luxy-ride-frontend.vercel.app/)👈
-- API deployment [link](https://luxy-rides-api.herokuapp.com/api-docs/index.html)👈
+- API deployment [link](https://luxy-rides.onrender.com/api-docs/index.html)👈
 - API GitHub repository [link](https://github.com/ha-manel/Luxy-Rides-API)👈
 
 ## Kanban Board:
