@@ -13,7 +13,7 @@ Main features of this website are:
 
 ## Project Documentation 📄
 
-- Live demo [link](luxy-ride-frontend-git-dev-ha-manel.vercel.app)👈
+- Live demo [link](luxy-ride-frontend.vercel.app/)👈
 - API deployment [link](https://luxy-rides.onrender.com/api-docs/index.html)👈
 - API GitHub repository [link](https://github.com/ha-manel/Luxy-Rides-API)👈
 
