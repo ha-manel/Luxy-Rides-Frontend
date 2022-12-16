@@ -26,7 +26,7 @@ const AddCar = () => {
     };
 
     axios
-      .post('https://luxy-rides-api.herokuapp.com/api/v1/car', car)
+      .post('https://luxy-rides.onrender.com/api/v1/car', car)
       .then((response) => {
         setLoading(false);
         setModel('');

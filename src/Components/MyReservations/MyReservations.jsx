@@ -13,7 +13,7 @@ const MyReservations = () => {
     setLoading(true);
     axios
       .get(
-        `https://luxy-rides-api.herokuapp.com/api/v1/reservations/${user.user.id}`,
+        `https://luxy-rides.onrender.com/api/v1/reservations/${user.user.id}`,
       )
       .then((response) => {
         setReservations(response.data.reservations);

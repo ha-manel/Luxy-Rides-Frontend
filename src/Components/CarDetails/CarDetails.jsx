@@ -9,7 +9,7 @@ const CarDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`https://luxy-rides-api.herokuapp.com/api/v1/car/${id}`)
+      .get(`https://luxy-rides.onrender.com/api/v1/car/${id}`)
       .then((response) => setCar(response.data.car));
   }, []);
 

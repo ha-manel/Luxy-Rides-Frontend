@@ -12,7 +12,7 @@ const CarList = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('https://luxy-rides-api.herokuapp.com/api/v1/cars')
+      .get('https://luxy-rides.onrender.com/api/v1/cars')
       .then((response) => {
         setCars(response.data.cars);
         setLoading(false);

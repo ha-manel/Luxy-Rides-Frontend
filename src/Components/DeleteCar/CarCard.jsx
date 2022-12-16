@@ -10,7 +10,7 @@ const DeleteCarUi = ({
   const [errorMessage, setErrorMessage] = useState('');
   const removeCar = (id) => {
     axios
-      .delete(`https://luxy-rides-api.herokuapp.com/api/v1/car/${id}`)
+      .delete(`https://luxy-rides.onrender.com/api/v1/car/${id}`)
       .then(() => {
         let filteredCars = [];
         filteredCars = cars.filter((car) => car.id !== id);

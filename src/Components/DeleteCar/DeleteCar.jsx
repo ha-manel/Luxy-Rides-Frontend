@@ -10,7 +10,7 @@ const DeleteCar = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://luxy-rides-api.herokuapp.com/api/v1/cars/${user.user.id}`)
+      .get(`https://luxy-rides.onrender.com/api/v1/cars/${user.user.id}`)
       .then((response) => {
         setCars(response.data.cars);
         setLoading(false);

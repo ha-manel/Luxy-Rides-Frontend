@@ -22,7 +22,7 @@ const Reserve = () => {
     e.preventDefault();
     if (date && city) {
       axios
-        .get(`https://luxy-rides-api.herokuapp.com/api/v1/reserve/cars/${date}`)
+        .get(`https://luxy-rides.onrender.com/api/v1/reserve/cars/${date}`)
         .then((response) => setCars(response.data.cars));
       setLoading(true);
     }
